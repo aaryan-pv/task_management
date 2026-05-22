@@ -1,1 +1,57 @@
-.venv
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+ 
+
+# IDE
+.vscode/
+.idea/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Database
+*.db
+*.sqlite3
+
+# Pytest
+.pytest_cache/
+
+# Coverage
+.coverage
+htmlcov/
+
+# Build
+build/
+dist/
+*.egg-info/
+
+# Redis dump
+dump.rdb
+
+# Alembic
+alembic/versions/*.pyc
+
+# Mypy
+.mypy_cache/
+
+# Cache
+.cache/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Docker
+*.pid
+
+# Secrets
+secrets.json
