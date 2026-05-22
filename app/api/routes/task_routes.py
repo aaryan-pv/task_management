@@ -9,7 +9,7 @@ from sqlalchemy.orm import Session
 from app.core.database import get_db
 
 from app.models.enums import TaskStatus
-
+from app.utils.logger import logger
 from app.schemas.task_schema import (
     TaskCreate,
     TaskUpdate,
@@ -43,24 +43,6 @@ def create_task(
         payload
     )
 
-
-# GET TASK BY ID
-@router.get(
-    "/{task_id}",
-    response_model=TaskResponse
-)
-def get_task(
-    task_id: int,
-    db: Session = Depends(get_db)
-):
-
-    return TaskService.get_task(
-        db,
-        task_id
-    )
-
-
-# LIST TASKS WITH FILTERS
 @router.get(
     "/",
     response_model=List[TaskResponse]
@@ -68,6 +50,7 @@ def get_task(
 def get_tasks(
     status: Optional[TaskStatus] = None,
     assigned_to: Optional[int] = None,
+    created_by: Optional[int] = None,
     limit: int = 10,
     offset: int = 0,
     sort_by: str = "created_at",
@@ -79,6 +62,7 @@ def get_tasks(
         db=db,
         status=status,
         assigned_to=assigned_to,
+        created_by=created_by,
         limit=limit,
         offset=offset,
         sort_by=sort_by,
@@ -86,21 +70,22 @@ def get_tasks(
     )
 
 
-# LIST TASKS BY USER
 @router.get(
-    "/user/{user_id}",
-    response_model=List[TaskResponse]
+    "/{task_id}",
+    response_model=TaskResponse
 )
-def get_tasks_by_user(
-    user_id: int,
+def get_task(
+    task_id: int,
     db: Session = Depends(get_db)
 ):
 
-    return TaskService.get_tasks_by_user(
-        db,
-        user_id
+    logger.info(
+        f"GET /tasks/{task_id} endpoint hit"
     )
-
+    return TaskService.get_task(
+        db,
+        task_id
+    )
 
 # UPDATE TASK
 @router.put(
@@ -120,7 +105,6 @@ def update_task(
     )
 
 
-# ASSIGN TASK
 @router.put(
     "/{task_id}/assign",
     response_model=TaskResponse
@@ -136,7 +120,6 @@ def assign_task(
         task_id,
         payload.assigned_to
     )
-
 
 # DELETE TASK
 @router.delete(

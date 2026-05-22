@@ -1,8 +1,12 @@
-from sqlalchemy.orm import Session
+from typing import Optional
+
 from sqlalchemy import asc
 from sqlalchemy import desc
 
+from sqlalchemy.orm import Session
+
 from app.models.task import Task
+from app.models.enums import TaskStatus
 
 
 class TaskRepository:
@@ -35,12 +39,13 @@ class TaskRepository:
     @staticmethod
     def get_tasks(
         db: Session,
-        status=None,
-        assigned_to=None,
-        limit=10,
-        offset=0,
-        sort_by="created_at",
-        order="desc"
+        status: Optional[TaskStatus] = None,
+        assigned_to: Optional[int] = None,
+        created_by: Optional[int] = None,
+        limit: int = 10,
+        offset: int = 0,
+        sort_by: str = "created_at",
+        order: str = "desc"
     ):
 
         query = db.query(Task)
@@ -57,6 +62,13 @@ class TaskRepository:
 
             query = query.filter(
                 Task.assigned_to == assigned_to
+            )
+
+        # FILTER BY CREATOR
+        if created_by:
+
+            query = query.filter(
+                Task.created_by == created_by
             )
 
         # SORTING

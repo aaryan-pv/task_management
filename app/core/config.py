@@ -9,6 +9,10 @@ class Settings(BaseSettings):
     APP_NAME: str = "Task Management API"
 
     APP_VERSION: str = "1.0.0"
+    REDIS_HOST: str
+    REDIS_PORT: int
+    REDIS_DB: int
+    
 
     DEBUG: bool = True
 

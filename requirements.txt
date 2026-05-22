@@ -19,7 +19,7 @@ pydantic-settings
 pytest
 pytest-asyncio
 fakeredis
-
+redis
 httpx
 
 python-multipart
