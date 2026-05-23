@@ -7,6 +7,8 @@ class TaskStatus(str, Enum):
 
     IN_PROGRESS = "in_progress"
 
+    PROCESSING_COMPLETION = "processing_completion"
+
     COMPLETED = "completed"
 
     CANCELLED = "cancelled"

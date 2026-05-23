@@ -17,3 +17,13 @@ ALLOWED_STATUS_TRANSITIONS = {
 
     TaskStatus.CANCELLED: []
 }
+
+def validate_status_transition(
+    current_status: TaskStatus,
+    new_status: TaskStatus
+):
+
+    allowed = ALLOWED_STATE_TRANSITIONS
+
+
+    return new_status in allowed

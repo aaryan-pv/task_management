@@ -12,6 +12,8 @@ class TaskCreate(BaseModel):
     description: Optional[str] = None
 
     created_by: int
+    assigned_to: Optional[int] = None
+    status: Optional[TaskStatus] = TaskStatus.PENDING
 
 
 class TaskUpdate(BaseModel):
@@ -21,12 +23,9 @@ class TaskUpdate(BaseModel):
     description: Optional[str] = None
 
     status: Optional[TaskStatus] = None
+    assigned_to: Optional[int] = None
 
-
-class TaskAssign(BaseModel):
-
-    assigned_to: int
-
+ 
 
 class TaskResponse(BaseModel):
 
@@ -41,7 +40,7 @@ class TaskResponse(BaseModel):
     created_by: int
 
     assigned_to: Optional[int]
-
+    completion_processed: bool
     created_at: datetime
 
     updated_at: datetime

@@ -19,6 +19,20 @@ from app.utils.exceptions import (
 )
 
 from app.utils.logger import logger
+from app.workers.task_worker import (
+    process_task_completion
+)
+def validate_status_transition(
+    current_status: TaskStatus,
+    new_status: TaskStatus
+):
+
+    allowed = ALLOWED_STATUS_TRANSITIONS.get(
+        current_status,
+        []
+    )
+
+    return new_status in allowed
 
 
 class TaskService:
@@ -132,60 +146,6 @@ class TaskService:
 
         return tasks
 
-    @staticmethod
-    def update_task(
-        db: Session,
-        task_id: int,
-        payload
-    ):
-
-        logger.info(
-            f"Updating task_id={task_id}"
-        )
-
-        task = TaskRepository.get_task_by_id(
-            db,
-            task_id
-        )
-
-        if not task:
-            raise NotFoundException(
-                detail="Task not found"
-            )
-
-        update_data = payload.model_dump(
-            exclude_unset=True
-        )
-
-        if "status" in update_data:
-            old_status = task.status
-            new_status = update_data["status"]
-
-            allowed_statuses = ALLOWED_STATUS_TRANSITIONS.get(
-                old_status,
-                []
-            )
-
-            if new_status not in allowed_statuses:
-                raise BadRequestException(
-                    detail=(
-                        f"Invalid status transition: "
-                        f"{old_status} -> {new_status}"
-                    )
-                )
-
-        updated_task = TaskRepository.update_task(
-            task,
-            update_data
-        )
-
-        db.commit()
-        db.refresh(updated_task)
-
-        CacheService.delete(f"task:{task_id}")
-        CacheService.delete(f"tasks:user:{task.created_by}")
-
-        return updated_task
 
     @staticmethod
     def assign_task(
@@ -261,3 +221,72 @@ class TaskService:
         return {
             "message": "Task deleted successfully"
         }
+
+
+
+
+    @staticmethod
+    def update_task(
+        db: Session,
+        task_id: int,
+        payload
+    ):
+
+        logger.info(
+            f"Updating task_id={task_id}"
+        )
+
+        task = TaskRepository.get_task_by_id(
+            db,
+            task_id
+        )
+
+        if not task:
+            raise NotFoundException(
+                detail="Task not found"
+            )
+
+        update_data = payload.model_dump(
+            exclude_unset=True
+        )
+
+        if "status" in update_data:
+            old_status = task.status
+            new_status = update_data["status"]
+
+            allowed_statuses = ALLOWED_STATUS_TRANSITIONS.get(
+                old_status,
+                []
+            )
+
+            if new_status not in allowed_statuses:
+                raise BadRequestException(
+                    detail=(
+                        f"Invalid status transition: "
+                        f"{old_status} -> {new_status}"
+                    )
+                )
+
+        updated_task = TaskRepository.update_task(
+            task,
+            update_data
+        )
+
+        db.commit()
+        if (
+    task.status.value.lower() == "completed"):
+
+            logger.info(
+                f"Queueing celery task "
+                f"for task_id={task.id}"
+                )
+
+            process_task_completion.delay(
+                task.id
+                )
+        db.refresh(updated_task)
+
+        CacheService.delete(f"task:{task_id}")
+        CacheService.delete(f"tasks:user:{task.created_by}")
+
+        return updated_task

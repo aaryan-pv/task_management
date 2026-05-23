@@ -8,7 +8,7 @@ from sqlalchemy import Enum
 
 from sqlalchemy.sql import func
 from sqlalchemy.orm import relationship
-
+from sqlalchemy import Boolean
 from app.core.database import Base
 
 from app.models.enums import TaskStatus
@@ -64,6 +64,11 @@ class Task(Base):
         onupdate=func.now()
     )
 
+    completion_processed = Column(
+    Boolean,
+    default=False,
+    nullable=False
+)
 
     creator = relationship(
         "User",
