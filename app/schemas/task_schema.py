@@ -1,6 +1,8 @@
 from pydantic import BaseModel
 from typing import Optional
 from datetime import datetime
+from typing import List
+ 
 
 from app.models.enums import TaskStatus
 
@@ -46,6 +48,40 @@ class TaskResponse(BaseModel):
     updated_at: datetime
 
 
+
+class BulkTaskCreate(BaseModel):
+
+    tasks: List[TaskCreate]
+
+
+class BulkTaskStatusItem(BaseModel):
+
+    task_id: int
+
+    status: TaskStatus
+
+
+class BulkTaskStatusUpdate(BaseModel):
+
+    tasks: List[BulkTaskStatusItem]
+
+
+class BulkOperationResult(BaseModel):
+
+    success: bool
+
+    task_id: Optional[int] = None
+
+    error: Optional[str] = None
+
+
+class BulkResponse(BaseModel):
+
+    success_count: int
+
+    failure_count: int
+
+    results: List[BulkOperationResult]
     class Config:
 
         from_attributes = True

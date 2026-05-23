@@ -13,7 +13,10 @@ from app.utils.logger import logger
 from app.schemas.task_schema import (
     TaskCreate,
     TaskUpdate,
-    TaskResponse
+    TaskResponse,
+    BulkTaskCreate,
+    BulkTaskStatusUpdate,
+    BulkResponse,
 )
 
 from app.services.task_service import (
@@ -117,4 +120,34 @@ def delete_task(
     return TaskService.delete_task(
         db,
         task_id
+    )
+
+
+@router.post(
+    "/bulk",
+    response_model=BulkResponse
+)
+def create_tasks_bulk(
+    payload: BulkTaskCreate,
+    db: Session = Depends(get_db)
+):
+
+    return TaskService.create_tasks_bulk(
+        db,
+        payload
+    )
+
+
+@router.put(
+    "/bulk/status",
+    response_model=BulkResponse
+)
+def update_tasks_bulk_status(
+    payload: BulkTaskStatusUpdate,
+    db: Session = Depends(get_db)
+):
+
+    return TaskService.update_tasks_bulk_status(
+        db,
+        payload
     )

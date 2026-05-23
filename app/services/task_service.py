@@ -9,6 +9,10 @@ from app.repositories.task_repository import (
     TaskRepository
 )
 
+from app.repositories.user_repository import (
+    UserRepository
+)
+
 from app.services.cache_service import (
     CacheService
 )
@@ -158,31 +162,61 @@ class TaskService:
             f"Assigning task_id={task_id} to user_id={assigned_to}"
         )
 
-        task = TaskRepository.get_task_by_id(
+        user = UserRepository.get_user_by_id(
+            db,
+            assigned_to
+        )
+
+        if not user:
+            raise NotFoundException(
+                detail="User not found"
+            )
+
+        if not user.is_active:
+            raise BadRequestException(
+                detail="User must be active to be assigned tasks"
+            )
+
+        rows_updated = TaskRepository.assign_pending_task(
+            db,
+            task_id,
+            assigned_to
+        )
+
+        if rows_updated == 0:
+            task = TaskRepository.get_task_by_id(
+                db,
+                task_id
+            )
+
+            if not task:
+                raise NotFoundException(
+                    detail="Task not found"
+                )
+
+            if task.status != TaskStatus.PENDING:
+                raise BadRequestException(
+                    detail="Only pending tasks can be assigned"
+                )
+
+            if task.assigned_to is not None:
+                raise BadRequestException(
+                    detail="Task is already assigned"
+                )
+
+            raise BadRequestException(
+                detail="Task could not be assigned; please retry"
+            )
+
+        db.commit()
+
+        updated_task = TaskRepository.get_task_by_id(
             db,
             task_id
         )
 
-        if not task:
-            raise NotFoundException(
-                detail="Task not found"
-            )
-
-        if task.status != TaskStatus.PENDING:
-            raise BadRequestException(
-                detail="Only pending tasks can be assigned"
-            )
-
-        updated_task = TaskRepository.update_task(
-            task,
-            {"assigned_to": assigned_to}
-        )
-
-        db.commit()
-        db.refresh(updated_task)
-
         CacheService.delete(f"task:{task_id}")
-        CacheService.delete(f"tasks:user:{task.created_by}")
+        CacheService.delete(f"tasks:user:{updated_task.created_by}")
 
         return updated_task
 
@@ -290,3 +324,130 @@ class TaskService:
         CacheService.delete(f"tasks:user:{task.created_by}")
 
         return updated_task
+
+    @staticmethod
+    def create_tasks_bulk(
+        db: Session,
+        payload
+    ):
+
+        results = []
+        success_count = 0
+        failure_count = 0
+        affected_users = set()
+
+        for task_payload in payload.tasks:
+
+            try:
+
+                task = TaskRepository.create_task(
+                    db=db,
+                    task_data=task_payload.model_dump()
+                )
+
+                db.commit()
+                db.refresh(task)
+
+                results.append({
+                    "success": True,
+                    "task_id": task.id
+                })
+
+                success_count += 1
+                affected_users.add(task.created_by)
+
+            except Exception as e:
+
+                db.rollback()
+
+                results.append({
+                    "success": False,
+                    "error": str(e)
+                })
+
+                failure_count += 1
+
+        for user_id in affected_users:
+            CacheService.delete(f"tasks:user:{user_id}")
+
+        return {
+            "success_count": success_count,
+            "failure_count": failure_count,
+            "results": results
+        }
+
+    @staticmethod
+    def update_tasks_bulk_status(
+        db: Session,
+        payload
+    ):
+
+        results = []
+        success_count = 0
+        failure_count = 0
+
+        for item in payload.tasks:
+
+            try:
+
+                task = TaskRepository.get_task_by_id(
+                    db,
+                    item.task_id
+                )
+
+                if not task:
+                    raise NotFoundException(
+                        detail="Task not found"
+                    )
+
+                old_status = task.status
+
+                allowed_statuses = ALLOWED_STATUS_TRANSITIONS.get(
+                    old_status,
+                    []
+                )
+
+                if item.status not in allowed_statuses:
+                    raise BadRequestException(
+                        detail=(
+                            f"Invalid status transition: "
+                            f"{old_status} -> {item.status}"
+                        )
+                    )
+
+                task.status = item.status
+
+                db.commit()
+                db.refresh(task)
+
+                if task.status == TaskStatus.COMPLETED:
+                    process_task_completion.delay(task.id)
+
+                CacheService.delete(f"task:{task.id}")
+                CacheService.delete(f"tasks:user:{task.created_by}")
+
+                results.append({
+                    "success": True,
+                    "task_id": task.id
+                })
+
+                success_count += 1
+
+            except Exception as e:
+
+                db.rollback()
+
+                results.append({
+                    "success": False,
+                    "task_id": item.task_id,
+                    "error": str(e)
+                })
+
+                failure_count += 1
+
+        return {
+            "success_count": success_count,
+            "failure_count": failure_count,
+            "results": results
+        }
+

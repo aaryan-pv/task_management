@@ -110,6 +110,30 @@ class TaskRepository:
 
 
     @staticmethod
+    def assign_pending_task(
+        db: Session,
+        task_id: int,
+        assigned_to: int
+    ) -> int:
+        """
+        Atomically assign only if status is pending and unassigned.
+        Returns the number of rows updated (0 or 1).
+        """
+        return (
+            db.query(Task)
+            .filter(
+                Task.id == task_id,
+                Task.status == TaskStatus.PENDING,
+                Task.assigned_to.is_(None),
+            )
+            .update(
+                {"assigned_to": assigned_to},
+                synchronize_session=False,
+            )
+        )
+
+
+    @staticmethod
     def delete_task(
         db: Session,
         task
