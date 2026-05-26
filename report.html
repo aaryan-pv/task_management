@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title id="head-title">report.html</title>
+      <link href="assets\style.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <h1 id="title">report.html</h1>
+    <p>Report generated on 25-May-2026 at 16:28:10 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a>
+        v4.2.0</p>
+    <div id="environment-header">
+      <h2>Environment</h2>
+    </div>
+    <table id="environment"></table>
+    <!-- TEMPLATES -->
+      <template id="template_environment_row">
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </template>
+    <template id="template_results-table__body--empty">
+      <tbody class="results-table-row">
+        <tr id="not-found-message">
+          <td colspan="4">No results found. Check the filters.</td>
+        </tr>
+      </tbody>
+    </template>
+    <template id="template_results-table__tbody">
+      <tbody class="results-table-row">
+        <tr class="collapsible">
+        </tr>
+        <tr class="extras-row">
+          <td class="extra" colspan="4">
+            <div class="extraHTML"></div>
+            <div class="media">
+              <div class="media-container">
+                  <div class="media-container__nav--left">&lt;</div>
+                  <div class="media-container__viewport">
+                    <img src="" />
+                    <video controls>
+                      <source src="" type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="media-container__nav--right">&gt;</div>
+                </div>
+                <div class="media__name"></div>
+                <div class="media__counter"></div>
+            </div>
+            <div class="logwrapper">
+              <div class="logexpander"></div>
+              <div class="log"></div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </template>
+    <!-- END TEMPLATES -->
+    <div class="summary">
+      <div class="summary__data">
+        <h2>Summary</h2>
+        <div class="additional-summary prefix">
+        </div>
+        <p class="run-count">35 tests took 00:00:01.</p>
+        <p class="filter">(Un)check the boxes to filter the results.</p>
+        <div class="summary__reload">
+          <div class="summary__reload__button hidden" onclick="location.reload()">
+            <div>There are still tests running. <br />Reload this page to get the latest results!</div>
+          </div>
+        </div>
+        <div class="summary__spacer"></div>
+        <div class="controls">
+          <div class="filters">
+            <input checked="true" class="filter" name="filter_checkbox" type="checkbox" data-test-result="failed" disabled>
+            <span class="failed">0 Failed,</span>
+            <input checked="true" class="filter" name="filter_checkbox" type="checkbox" data-test-result="passed" >
+            <span class="passed">35 Passed,</span>
+            <input checked="true" class="filter" name="filter_checkbox" type="checkbox" data-test-result="skipped" disabled>
+            <span class="skipped">0 Skipped,</span>
+            <input checked="true" class="filter" name="filter_checkbox" type="checkbox" data-test-result="xfailed" disabled>
+            <span class="xfailed">0 Expected failures,</span>
+            <input checked="true" class="filter" name="filter_checkbox" type="checkbox" data-test-result="xpassed" disabled>
+            <span class="xpassed">0 Unexpected passes,</span>
+            <input checked="true" class="filter" name="filter_checkbox" type="checkbox" data-test-result="error" disabled>
+            <span class="error">0 Errors,</span>
+            <input checked="true" class="filter" name="filter_checkbox" type="checkbox" data-test-result="rerun" disabled>
+            <span class="rerun">0 Reruns</span>
+            <input checked="true" class="filter" name="filter_checkbox" type="checkbox" data-test-result="retried" disabled>
+            <span class="retried">0 Retried,</span>
+          </div>
+          <div class="collapse">
+            <button id="show_all_details">Show all details</button>&nbsp;/&nbsp;<button id="hide_all_details">Hide all details</button>
+          </div>
+        </div>
+      </div>
+      <div class="additional-summary summary">
+      </div>
+      <div class="additional-summary postfix">
+      </div>
+    </div>
+    <table id="results-table">
+      <thead id="results-table-head">
+        <tr>
+          <th class="sortable" data-column-type="result">Result</th>
+          <th class="sortable" data-column-type="testId">Test</th>
+          <th class="sortable" data-column-type="duration">Duration</th>
+          <th>Links</th>
+        </tr>
+      </thead>
+    </table>
+  <footer>
+    <div id="data-container" data-jsonblob="{&#34;environment&#34;: {&#34;Python&#34;: &#34;3.13.7&#34;, &#34;Platform&#34;: &#34;Windows-11-10.0.26200-SP0&#34;, &#34;Packages&#34;: {&#34;pytest&#34;: &#34;9.0.3&#34;, &#34;pluggy&#34;: &#34;1.6.0&#34;}, &#34;Plugins&#34;: {&#34;anyio&#34;: &#34;4.13.0&#34;, &#34;asyncio&#34;: &#34;1.3.0&#34;, &#34;cov&#34;: &#34;7.1.0&#34;, &#34;html&#34;: &#34;4.2.0&#34;, &#34;metadata&#34;: &#34;3.1.1&#34;}}, &#34;tests&#34;: {&#34;tests/integration/test_assignment.py::test_assign_pending_task_succeeds&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/integration/test_assignment.py::test_assign_pending_task_succeeds&#34;, &#34;duration&#34;: &#34;47 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/integration/test_assignment.py::test_assign_pending_task_succeeds&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;47 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stderr call -----------------------------\n2026-05-25 16:28:09,815 INFO task_management Creating task created_by=1\n2026-05-25 16:28:09,821 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:09,823 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:09,825 INFO task_management Assigning task_id=449 to user_id=2\n2026-05-25 16:28:09,829 INFO task_management Cache DELETE key=task:449\n2026-05-25 16:28:09,829 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:09,831 INFO httpx HTTP Request: PUT http://testserver/tasks/449/assign &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n------------------------------ Captured log call -------------------------------\nINFO     task_management:task_service.py:63 Creating task created_by=1\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:161 Assigning task_id=449 to user_id=2\nINFO     task_management:cache_service.py:76 Cache DELETE key=task:449\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/449/assign &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n&#34;}], &#34;tests/integration/test_assignment.py::test_assign_rejects_inactive_user&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/integration/test_assignment.py::test_assign_rejects_inactive_user&#34;, &#34;duration&#34;: &#34;12 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/integration/test_assignment.py::test_assign_rejects_inactive_user&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;12 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stderr call -----------------------------\n2026-05-25 16:28:09,836 INFO task_management Creating task created_by=1\n2026-05-25 16:28:09,838 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:09,839 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:09,841 INFO task_management Assigning task_id=450 to user_id=3\n2026-05-25 16:28:09,843 INFO httpx HTTP Request: PUT http://testserver/tasks/450/assign &amp;quot;HTTP/1.1 400 Bad Request&amp;quot;\n\n------------------------------ Captured log call -------------------------------\nINFO     task_management:task_service.py:63 Creating task created_by=1\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:161 Assigning task_id=450 to user_id=3\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/450/assign &amp;quot;HTTP/1.1 400 Bad Request&amp;quot;\n\n&#34;}], &#34;tests/integration/test_assignment.py::test_assign_rejects_unknown_user&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/integration/test_assignment.py::test_assign_rejects_unknown_user&#34;, &#34;duration&#34;: &#34;11 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/integration/test_assignment.py::test_assign_rejects_unknown_user&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;11 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stderr call -----------------------------\n2026-05-25 16:28:09,848 INFO task_management Creating task created_by=1\n2026-05-25 16:28:09,850 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:09,851 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:09,853 INFO task_management Assigning task_id=451 to user_id=99999\n2026-05-25 16:28:09,855 INFO httpx HTTP Request: PUT http://testserver/tasks/451/assign &amp;quot;HTTP/1.1 404 Not Found&amp;quot;\n\n------------------------------ Captured log call -------------------------------\nINFO     task_management:task_service.py:63 Creating task created_by=1\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:161 Assigning task_id=451 to user_id=99999\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/451/assign &amp;quot;HTTP/1.1 404 Not Found&amp;quot;\n\n&#34;}], &#34;tests/integration/test_assignment.py::test_assign_rejects_unknown_task&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/integration/test_assignment.py::test_assign_rejects_unknown_task&#34;, &#34;duration&#34;: &#34;7 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/integration/test_assignment.py::test_assign_rejects_unknown_task&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;7 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stderr call -----------------------------\n2026-05-25 16:28:09,859 INFO task_management Assigning task_id=99999 to user_id=1\n2026-05-25 16:28:09,862 INFO httpx HTTP Request: PUT http://testserver/tasks/99999/assign &amp;quot;HTTP/1.1 404 Not Found&amp;quot;\n\n------------------------------ Captured log call -------------------------------\nINFO     task_management:task_service.py:161 Assigning task_id=99999 to user_id=1\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/99999/assign &amp;quot;HTTP/1.1 404 Not Found&amp;quot;\n\n&#34;}], &#34;tests/integration/test_assignment.py::test_assign_rejects_already_assigned_task&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/integration/test_assignment.py::test_assign_rejects_already_assigned_task&#34;, &#34;duration&#34;: &#34;18 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/integration/test_assignment.py::test_assign_rejects_already_assigned_task&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;18 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stderr call -----------------------------\n2026-05-25 16:28:09,866 INFO task_management Creating task created_by=1\n2026-05-25 16:28:09,869 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:09,870 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:09,872 INFO task_management Assigning task_id=452 to user_id=1\n2026-05-25 16:28:09,874 INFO task_management Cache DELETE key=task:452\n2026-05-25 16:28:09,874 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:09,875 INFO httpx HTTP Request: PUT http://testserver/tasks/452/assign &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:09,878 INFO task_management Assigning task_id=452 to user_id=2\n2026-05-25 16:28:09,881 INFO httpx HTTP Request: PUT http://testserver/tasks/452/assign &amp;quot;HTTP/1.1 400 Bad Request&amp;quot;\n\n------------------------------ Captured log call -------------------------------\nINFO     task_management:task_service.py:63 Creating task created_by=1\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:161 Assigning task_id=452 to user_id=1\nINFO     task_management:cache_service.py:76 Cache DELETE key=task:452\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/452/assign &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:161 Assigning task_id=452 to user_id=2\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/452/assign &amp;quot;HTTP/1.1 400 Bad Request&amp;quot;\n\n&#34;}], &#34;tests/integration/test_assignment.py::test_assign_rejects_non_pending_task&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/integration/test_assignment.py::test_assign_rejects_non_pending_task&#34;, &#34;duration&#34;: &#34;19 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/integration/test_assignment.py::test_assign_rejects_non_pending_task&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;19 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stderr call -----------------------------\n2026-05-25 16:28:09,885 INFO task_management Creating task created_by=1\n2026-05-25 16:28:09,887 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:09,888 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:09,890 INFO task_management Updating task_id=453\n2026-05-25 16:28:09,894 INFO task_management Cache DELETE key=task:453\n2026-05-25 16:28:09,894 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:09,895 INFO httpx HTTP Request: PUT http://testserver/tasks/453 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:09,897 INFO task_management Assigning task_id=453 to user_id=1\n2026-05-25 16:28:09,900 INFO httpx HTTP Request: PUT http://testserver/tasks/453/assign &amp;quot;HTTP/1.1 400 Bad Request&amp;quot;\n\n------------------------------ Captured log call -------------------------------\nINFO     task_management:task_service.py:63 Creating task created_by=1\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:269 Updating task_id=453\nINFO     task_management:cache_service.py:76 Cache DELETE key=task:453\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/453 &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:161 Assigning task_id=453 to user_id=1\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/453/assign &amp;quot;HTTP/1.1 400 Bad Request&amp;quot;\n\n&#34;}], &#34;tests/integration/test_assignment.py::test_concurrent_double_assign_only_one_wins&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/integration/test_assignment.py::test_concurrent_double_assign_only_one_wins&#34;, &#34;duration&#34;: &#34;100 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/integration/test_assignment.py::test_concurrent_double_assign_only_one_wins&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;100 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stderr call -----------------------------\n2026-05-25 16:28:09,904 INFO task_management Creating task created_by=1\n2026-05-25 16:28:09,906 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:09,908 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:09,911 INFO task_management Assigning task_id=454 to user_id=1\n2026-05-25 16:28:09,911 INFO task_management Assigning task_id=454 to user_id=2\n2026-05-25 16:28:09,913 INFO task_management Cache DELETE key=task:454\n2026-05-25 16:28:09,914 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:09,915 INFO httpx HTTP Request: PUT http://testserver/tasks/454/assign &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:09,995 INFO httpx HTTP Request: PUT http://testserver/tasks/454/assign &amp;quot;HTTP/1.1 400 Bad Request&amp;quot;\n2026-05-25 16:28:09,998 INFO task_management GET /tasks/454 endpoint hit\n2026-05-25 16:28:09,998 INFO task_management Fetching task_id=454\n2026-05-25 16:28:09,999 INFO task_management Cache SET key=task:454\n2026-05-25 16:28:10,000 INFO httpx HTTP Request: GET http://testserver/tasks/454 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n------------------------------ Captured log call -------------------------------\nINFO     task_management:task_service.py:63 Creating task created_by=1\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:161 Assigning task_id=454 to user_id=1\nINFO     task_management:task_service.py:161 Assigning task_id=454 to user_id=2\nINFO     task_management:cache_service.py:76 Cache DELETE key=task:454\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/454/assign &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/454/assign &amp;quot;HTTP/1.1 400 Bad Request&amp;quot;\nINFO     task_management:task_routes.py:85 GET /tasks/454 endpoint hit\nINFO     task_management:task_service.py:87 Fetching task_id=454\nINFO     task_management:cache_service.py:58 Cache SET key=task:454\nINFO     httpx:_client.py:1025 HTTP Request: GET http://testserver/tasks/454 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n&#34;}], &#34;tests/integration/test_bulk.py::test_bulk_create_returns_ids_for_all_items&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/integration/test_bulk.py::test_bulk_create_returns_ids_for_all_items&#34;, &#34;duration&#34;: &#34;17 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/integration/test_bulk.py::test_bulk_create_returns_ids_for_all_items&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;17 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stderr call -----------------------------\n2026-05-25 16:28:10,016 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,017 INFO httpx HTTP Request: POST http://testserver/tasks/bulk &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n------------------------------ Captured log call -------------------------------\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/bulk &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n&#34;}], &#34;tests/integration/test_bulk.py::test_bulk_create_persists_tasks_visible_in_list&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/integration/test_bulk.py::test_bulk_create_persists_tasks_visible_in_list&#34;, &#34;duration&#34;: &#34;13 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/integration/test_bulk.py::test_bulk_create_persists_tasks_visible_in_list&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;13 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stderr call -----------------------------\n2026-05-25 16:28:10,025 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,026 INFO httpx HTTP Request: POST http://testserver/tasks/bulk &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,028 INFO task_management \n            Listing tasks\n            status=None\n            assigned_to=None\n            created_by=None\n            limit=100\n            offset=0\n            \n2026-05-25 16:28:10,031 INFO httpx HTTP Request: GET http://testserver/tasks/?limit=100 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n------------------------------ Captured log call -------------------------------\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/bulk &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:120 \n            Listing tasks\n            status=None\n            assigned_to=None\n            created_by=None\n            limit=100\n            offset=0\n            \nINFO     httpx:_client.py:1025 HTTP Request: GET http://testserver/tasks/?limit=100 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n&#34;}], &#34;tests/integration/test_bulk.py::test_bulk_create_partial_failure_does_not_block_valid_items&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/integration/test_bulk.py::test_bulk_create_partial_failure_does_not_block_valid_items&#34;, &#34;duration&#34;: &#34;9 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/integration/test_bulk.py::test_bulk_create_partial_failure_does_not_block_valid_items&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;9 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stderr call -----------------------------\n2026-05-25 16:28:10,039 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,041 INFO httpx HTTP Request: POST http://testserver/tasks/bulk &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n------------------------------ Captured log call -------------------------------\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/bulk &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n&#34;}], &#34;tests/integration/test_bulk.py::test_bulk_create_validation_error_for_missing_required_field&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/integration/test_bulk.py::test_bulk_create_validation_error_for_missing_required_field&#34;, &#34;duration&#34;: &#34;29 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/integration/test_bulk.py::test_bulk_create_validation_error_for_missing_required_field&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;29 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stderr call -----------------------------\n2026-05-25 16:28:10,070 INFO httpx HTTP Request: POST http://testserver/tasks/bulk &amp;quot;HTTP/1.1 422 Unprocessable Entity&amp;quot;\n\n------------------------------ Captured log call -------------------------------\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/bulk &amp;quot;HTTP/1.1 422 Unprocessable Entity&amp;quot;\n\n&#34;}], &#34;tests/integration/test_bulk.py::test_bulk_status_update_applies_valid_transitions&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/integration/test_bulk.py::test_bulk_status_update_applies_valid_transitions&#34;, &#34;duration&#34;: &#34;44 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/integration/test_bulk.py::test_bulk_status_update_applies_valid_transitions&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;44 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stderr call -----------------------------\n2026-05-25 16:28:10,099 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,100 INFO httpx HTTP Request: POST http://testserver/tasks/bulk &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,104 INFO task_management Cache DELETE key=task:462\n2026-05-25 16:28:10,104 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,106 INFO task_management Cache DELETE key=task:463\n2026-05-25 16:28:10,106 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,107 INFO httpx HTTP Request: PUT http://testserver/tasks/bulk/status &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,109 INFO task_management GET /tasks/462 endpoint hit\n2026-05-25 16:28:10,109 INFO task_management Fetching task_id=462\n2026-05-25 16:28:10,110 INFO task_management Cache SET key=task:462\n2026-05-25 16:28:10,111 INFO httpx HTTP Request: GET http://testserver/tasks/462 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,113 INFO task_management GET /tasks/463 endpoint hit\n2026-05-25 16:28:10,113 INFO task_management Fetching task_id=463\n2026-05-25 16:28:10,114 INFO task_management Cache SET key=task:463\n2026-05-25 16:28:10,115 INFO httpx HTTP Request: GET http://testserver/tasks/463 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n------------------------------ Captured log call -------------------------------\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/bulk &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:cache_service.py:76 Cache DELETE key=task:462\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     task_management:cache_service.py:76 Cache DELETE key=task:463\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/bulk/status &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_routes.py:85 GET /tasks/462 endpoint hit\nINFO     task_management:task_service.py:87 Fetching task_id=462\nINFO     task_management:cache_service.py:58 Cache SET key=task:462\nINFO     httpx:_client.py:1025 HTTP Request: GET http://testserver/tasks/462 &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_routes.py:85 GET /tasks/463 endpoint hit\nINFO     task_management:task_service.py:87 Fetching task_id=463\nINFO     task_management:cache_service.py:58 Cache SET key=task:463\nINFO     httpx:_client.py:1025 HTTP Request: GET http://testserver/tasks/463 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n&#34;}], &#34;tests/integration/test_bulk.py::test_bulk_status_update_partial_failure&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/integration/test_bulk.py::test_bulk_status_update_partial_failure&#34;, &#34;duration&#34;: &#34;24 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/integration/test_bulk.py::test_bulk_status_update_partial_failure&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;24 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stderr call -----------------------------\n2026-05-25 16:28:10,123 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,124 INFO httpx HTTP Request: POST http://testserver/tasks/bulk &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,129 INFO task_management Cache DELETE key=task:464\n2026-05-25 16:28:10,129 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,132 INFO httpx HTTP Request: PUT http://testserver/tasks/bulk/status &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,134 INFO task_management GET /tasks/464 endpoint hit\n2026-05-25 16:28:10,134 INFO task_management Fetching task_id=464\n2026-05-25 16:28:10,134 INFO task_management Cache SET key=task:464\n2026-05-25 16:28:10,136 INFO httpx HTTP Request: GET http://testserver/tasks/464 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,137 INFO task_management GET /tasks/465 endpoint hit\n2026-05-25 16:28:10,137 INFO task_management Fetching task_id=465\n2026-05-25 16:28:10,138 INFO task_management Cache SET key=task:465\n2026-05-25 16:28:10,139 INFO httpx HTTP Request: GET http://testserver/tasks/465 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n------------------------------ Captured log call -------------------------------\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/bulk &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:cache_service.py:76 Cache DELETE key=task:464\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/bulk/status &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_routes.py:85 GET /tasks/464 endpoint hit\nINFO     task_management:task_service.py:87 Fetching task_id=464\nINFO     task_management:cache_service.py:58 Cache SET key=task:464\nINFO     httpx:_client.py:1025 HTTP Request: GET http://testserver/tasks/464 &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_routes.py:85 GET /tasks/465 endpoint hit\nINFO     task_management:task_service.py:87 Fetching task_id=465\nINFO     task_management:cache_service.py:58 Cache SET key=task:465\nINFO     httpx:_client.py:1025 HTTP Request: GET http://testserver/tasks/465 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n&#34;}], &#34;tests/integration/test_cache.py::test_cache_populated_with_ttl_on_get_task&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/integration/test_cache.py::test_cache_populated_with_ttl_on_get_task&#34;, &#34;duration&#34;: &#34;12 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/integration/test_cache.py::test_cache_populated_with_ttl_on_get_task&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;12 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stderr call -----------------------------\n2026-05-25 16:28:10,144 INFO task_management Creating task created_by=1\n2026-05-25 16:28:10,146 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,148 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,150 INFO task_management GET /tasks/466 endpoint hit\n2026-05-25 16:28:10,150 INFO task_management Fetching task_id=466\n2026-05-25 16:28:10,151 INFO task_management Cache SET key=task:466\n2026-05-25 16:28:10,152 INFO httpx HTTP Request: GET http://testserver/tasks/466 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n------------------------------ Captured log call -------------------------------\nINFO     task_management:task_service.py:63 Creating task created_by=1\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_routes.py:85 GET /tasks/466 endpoint hit\nINFO     task_management:task_service.py:87 Fetching task_id=466\nINFO     task_management:cache_service.py:58 Cache SET key=task:466\nINFO     httpx:_client.py:1025 HTTP Request: GET http://testserver/tasks/466 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n&#34;}], &#34;tests/integration/test_cache.py::test_cache_miss_then_populate_on_first_read&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/integration/test_cache.py::test_cache_miss_then_populate_on_first_read&#34;, &#34;duration&#34;: &#34;11 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/integration/test_cache.py::test_cache_miss_then_populate_on_first_read&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;11 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stderr call -----------------------------\n2026-05-25 16:28:10,156 INFO task_management Creating task created_by=1\n2026-05-25 16:28:10,158 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,159 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,161 INFO task_management GET /tasks/467 endpoint hit\n2026-05-25 16:28:10,161 INFO task_management Fetching task_id=467\n2026-05-25 16:28:10,162 INFO task_management Cache SET key=task:467\n2026-05-25 16:28:10,163 INFO httpx HTTP Request: GET http://testserver/tasks/467 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n------------------------------ Captured log call -------------------------------\nINFO     task_management:task_service.py:63 Creating task created_by=1\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_routes.py:85 GET /tasks/467 endpoint hit\nINFO     task_management:task_service.py:87 Fetching task_id=467\nINFO     task_management:cache_service.py:58 Cache SET key=task:467\nINFO     httpx:_client.py:1025 HTTP Request: GET http://testserver/tasks/467 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n&#34;}], &#34;tests/integration/test_cache.py::test_cache_invalidated_on_update&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/integration/test_cache.py::test_cache_invalidated_on_update&#34;, &#34;duration&#34;: &#34;23 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/integration/test_cache.py::test_cache_invalidated_on_update&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;23 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stderr call -----------------------------\n2026-05-25 16:28:10,167 INFO task_management Creating task created_by=1\n2026-05-25 16:28:10,169 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,170 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,172 INFO task_management GET /tasks/468 endpoint hit\n2026-05-25 16:28:10,172 INFO task_management Fetching task_id=468\n2026-05-25 16:28:10,173 INFO task_management Cache SET key=task:468\n2026-05-25 16:28:10,174 INFO httpx HTTP Request: GET http://testserver/tasks/468 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,176 INFO task_management \n            Listing tasks\n            status=None\n            assigned_to=None\n            created_by=1\n            limit=10\n            offset=0\n            \n2026-05-25 16:28:10,178 INFO task_management Cache SET key=tasks:user:1\n2026-05-25 16:28:10,179 INFO httpx HTTP Request: GET http://testserver/tasks/?created_by=1 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,181 INFO task_management Updating task_id=468\n2026-05-25 16:28:10,185 INFO task_management Cache DELETE key=task:468\n2026-05-25 16:28:10,185 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,186 INFO httpx HTTP Request: PUT http://testserver/tasks/468 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n------------------------------ Captured log call -------------------------------\nINFO     task_management:task_service.py:63 Creating task created_by=1\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_routes.py:85 GET /tasks/468 endpoint hit\nINFO     task_management:task_service.py:87 Fetching task_id=468\nINFO     task_management:cache_service.py:58 Cache SET key=task:468\nINFO     httpx:_client.py:1025 HTTP Request: GET http://testserver/tasks/468 &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:120 \n            Listing tasks\n            status=None\n            assigned_to=None\n            created_by=1\n            limit=10\n            offset=0\n            \nINFO     task_management:cache_service.py:58 Cache SET key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: GET http://testserver/tasks/?created_by=1 &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:269 Updating task_id=468\nINFO     task_management:cache_service.py:76 Cache DELETE key=task:468\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/468 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n&#34;}], &#34;tests/integration/test_cache.py::test_cache_invalidated_on_delete&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/integration/test_cache.py::test_cache_invalidated_on_delete&#34;, &#34;duration&#34;: &#34;20 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/integration/test_cache.py::test_cache_invalidated_on_delete&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;20 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stderr call -----------------------------\n2026-05-25 16:28:10,190 INFO task_management Creating task created_by=1\n2026-05-25 16:28:10,192 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,194 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,195 INFO task_management GET /tasks/469 endpoint hit\n2026-05-25 16:28:10,195 INFO task_management Fetching task_id=469\n2026-05-25 16:28:10,196 INFO task_management Cache SET key=task:469\n2026-05-25 16:28:10,197 INFO httpx HTTP Request: GET http://testserver/tasks/469 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,199 INFO task_management \n            Listing tasks\n            status=None\n            assigned_to=None\n            created_by=1\n            limit=10\n            offset=0\n            \n2026-05-25 16:28:10,200 INFO task_management Cache SET key=tasks:user:1\n2026-05-25 16:28:10,201 INFO httpx HTTP Request: GET http://testserver/tasks/?created_by=1 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,203 INFO task_management Deleting task_id=469\n2026-05-25 16:28:10,206 INFO task_management Cache DELETE key=task:469\n2026-05-25 16:28:10,206 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,207 INFO httpx HTTP Request: DELETE http://testserver/tasks/469 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n------------------------------ Captured log call -------------------------------\nINFO     task_management:task_service.py:63 Creating task created_by=1\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_routes.py:85 GET /tasks/469 endpoint hit\nINFO     task_management:task_service.py:87 Fetching task_id=469\nINFO     task_management:cache_service.py:58 Cache SET key=task:469\nINFO     httpx:_client.py:1025 HTTP Request: GET http://testserver/tasks/469 &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:120 \n            Listing tasks\n            status=None\n            assigned_to=None\n            created_by=1\n            limit=10\n            offset=0\n            \nINFO     task_management:cache_service.py:58 Cache SET key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: GET http://testserver/tasks/?created_by=1 &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:229 Deleting task_id=469\nINFO     task_management:cache_service.py:76 Cache DELETE key=task:469\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: DELETE http://testserver/tasks/469 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n&#34;}], &#34;tests/integration/test_cache.py::test_cache_redis_down_falls_back_to_db_and_logs&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/integration/test_cache.py::test_cache_redis_down_falls_back_to_db_and_logs&#34;, &#34;duration&#34;: &#34;10 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/integration/test_cache.py::test_cache_redis_down_falls_back_to_db_and_logs&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;10 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stderr call -----------------------------\n2026-05-25 16:28:10,211 INFO task_management Creating task created_by=1\n2026-05-25 16:28:10,213 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,214 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,216 ERROR task_management Redis SET failed: redis is down\n2026-05-25 16:28:10,218 INFO httpx HTTP Request: GET http://testserver/tasks/470 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n------------------------------ Captured log call -------------------------------\nINFO     task_management:task_service.py:63 Creating task created_by=1\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nERROR    task_management:cache_service.py:64 Redis SET failed: redis is down\nINFO     httpx:_client.py:1025 HTTP Request: GET http://testserver/tasks/470 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n&#34;}], &#34;tests/integration/test_celery.py::test_celery_queued_when_task_marked_completed&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/integration/test_celery.py::test_celery_queued_when_task_marked_completed&#34;, &#34;duration&#34;: &#34;21 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/integration/test_celery.py::test_celery_queued_when_task_marked_completed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;21 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stderr call -----------------------------\n2026-05-25 16:28:10,222 INFO task_management Creating task created_by=1\n2026-05-25 16:28:10,224 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,225 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,227 INFO task_management Updating task_id=471\n2026-05-25 16:28:10,229 INFO task_management Cache DELETE key=task:471\n2026-05-25 16:28:10,230 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,231 INFO httpx HTTP Request: PUT http://testserver/tasks/471 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,233 INFO task_management Updating task_id=471\n2026-05-25 16:28:10,237 INFO task_management Queueing celery task for task_id=471\n2026-05-25 16:28:10,238 INFO task_management Cache DELETE key=task:471\n2026-05-25 16:28:10,238 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,239 INFO httpx HTTP Request: PUT http://testserver/tasks/471 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n------------------------------ Captured log call -------------------------------\nINFO     task_management:task_service.py:63 Creating task created_by=1\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:269 Updating task_id=471\nINFO     task_management:cache_service.py:76 Cache DELETE key=task:471\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/471 &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:269 Updating task_id=471\nINFO     task_management:task_service.py:313 Queueing celery task for task_id=471\nINFO     task_management:cache_service.py:76 Cache DELETE key=task:471\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/471 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n&#34;}], &#34;tests/integration/test_celery.py::test_celery_not_queued_for_non_completion_updates&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/integration/test_celery.py::test_celery_not_queued_for_non_completion_updates&#34;, &#34;duration&#34;: &#34;24 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/integration/test_celery.py::test_celery_not_queued_for_non_completion_updates&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;24 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stderr call -----------------------------\n2026-05-25 16:28:10,243 INFO task_management Creating task created_by=1\n2026-05-25 16:28:10,245 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,246 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,248 INFO task_management Updating task_id=472\n2026-05-25 16:28:10,251 INFO task_management Cache DELETE key=task:472\n2026-05-25 16:28:10,251 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,252 INFO httpx HTTP Request: PUT http://testserver/tasks/472 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,254 INFO task_management Updating task_id=472\n2026-05-25 16:28:10,256 INFO task_management Cache DELETE key=task:472\n2026-05-25 16:28:10,256 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,257 INFO httpx HTTP Request: PUT http://testserver/tasks/472 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,260 INFO task_management Updating task_id=472\n2026-05-25 16:28:10,262 INFO task_management Cache DELETE key=task:472\n2026-05-25 16:28:10,262 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,264 INFO httpx HTTP Request: PUT http://testserver/tasks/472 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n------------------------------ Captured log call -------------------------------\nINFO     task_management:task_service.py:63 Creating task created_by=1\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:269 Updating task_id=472\nINFO     task_management:cache_service.py:76 Cache DELETE key=task:472\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/472 &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:269 Updating task_id=472\nINFO     task_management:cache_service.py:76 Cache DELETE key=task:472\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/472 &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:269 Updating task_id=472\nINFO     task_management:cache_service.py:76 Cache DELETE key=task:472\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/472 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n&#34;}], &#34;tests/integration/test_celery.py::test_complete_request_is_non_blocking&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/integration/test_celery.py::test_complete_request_is_non_blocking&#34;, &#34;duration&#34;: &#34;19 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/integration/test_celery.py::test_complete_request_is_non_blocking&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;19 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stderr call -----------------------------\n2026-05-25 16:28:10,268 INFO task_management Creating task created_by=1\n2026-05-25 16:28:10,269 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,271 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,272 INFO task_management Updating task_id=473\n2026-05-25 16:28:10,275 INFO task_management Cache DELETE key=task:473\n2026-05-25 16:28:10,275 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,277 INFO httpx HTTP Request: PUT http://testserver/tasks/473 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,279 INFO task_management Updating task_id=473\n2026-05-25 16:28:10,281 INFO task_management Queueing celery task for task_id=473\n2026-05-25 16:28:10,282 INFO task_management Cache DELETE key=task:473\n2026-05-25 16:28:10,282 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,283 INFO httpx HTTP Request: PUT http://testserver/tasks/473 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n------------------------------ Captured log call -------------------------------\nINFO     task_management:task_service.py:63 Creating task created_by=1\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:269 Updating task_id=473\nINFO     task_management:cache_service.py:76 Cache DELETE key=task:473\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/473 &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:269 Updating task_id=473\nINFO     task_management:task_service.py:313 Queueing celery task for task_id=473\nINFO     task_management:cache_service.py:76 Cache DELETE key=task:473\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/473 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n&#34;}], &#34;tests/integration/test_celery.py::test_celery_retry_configuration&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/integration/test_celery.py::test_celery_retry_configuration&#34;, &#34;duration&#34;: &#34;1 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/integration/test_celery.py::test_celery_retry_configuration&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;1 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;No log output captured.&#34;}], &#34;tests/integration/test_celery.py::test_worker_processes_completion_and_marks_idempotent&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/integration/test_celery.py::test_worker_processes_completion_and_marks_idempotent&#34;, &#34;duration&#34;: &#34;62 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/integration/test_celery.py::test_worker_processes_completion_and_marks_idempotent&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;62 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stderr call -----------------------------\n2026-05-25 16:28:10,294 INFO task_management Celery worker started task_id=474\n2026-05-25 16:28:10,294 INFO task_management Processing completion task_id=474\n2026-05-25 16:28:10,296 INFO task_management Worker marked task completed task_id=474\n2026-05-25 16:28:10,346 INFO celery.app.trace Task app.workers.task_worker.process_task_completion[4b5b66fe-f9f7-4e7d-8669-e113ebb9f423] succeeded in 0.052675000042654574s: None\n\n------------------------------ Captured log call -------------------------------\nINFO     task_management:task_worker.py:30 Celery worker started task_id=474\nINFO     task_management:task_worker.py:66 Processing completion task_id=474\nINFO     task_management:task_worker.py:84 Worker marked task completed task_id=474\nINFO     celery.app.trace:trace.py:128 Task app.workers.task_worker.process_task_completion[4b5b66fe-f9f7-4e7d-8669-e113ebb9f423] succeeded in 0.052675000042654574s: None\n\n&#34;}], &#34;tests/integration/test_query.py::test_filter_by_status&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/integration/test_query.py::test_filter_by_status&#34;, &#34;duration&#34;: &#34;53 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/integration/test_query.py::test_filter_by_status&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;53 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stderr call -----------------------------\n2026-05-25 16:28:10,353 INFO task_management Creating task created_by=1\n2026-05-25 16:28:10,355 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,357 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,359 INFO task_management Creating task created_by=1\n2026-05-25 16:28:10,361 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,362 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,364 INFO task_management Creating task created_by=2\n2026-05-25 16:28:10,365 INFO task_management Cache DELETE key=tasks:user:2\n2026-05-25 16:28:10,366 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,368 INFO task_management Creating task created_by=2\n2026-05-25 16:28:10,370 INFO task_management Cache DELETE key=tasks:user:2\n2026-05-25 16:28:10,371 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,373 INFO task_management Updating task_id=476\n2026-05-25 16:28:10,375 INFO task_management Cache DELETE key=task:476\n2026-05-25 16:28:10,375 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,376 INFO httpx HTTP Request: PUT http://testserver/tasks/476 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,387 INFO task_management Updating task_id=477\n2026-05-25 16:28:10,390 INFO task_management Cache DELETE key=task:477\n2026-05-25 16:28:10,390 INFO task_management Cache DELETE key=tasks:user:2\n2026-05-25 16:28:10,391 INFO httpx HTTP Request: PUT http://testserver/tasks/477 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,393 INFO task_management Updating task_id=477\n2026-05-25 16:28:10,395 INFO task_management Queueing celery task for task_id=477\n2026-05-25 16:28:10,396 INFO task_management Cache DELETE key=task:477\n2026-05-25 16:28:10,396 INFO task_management Cache DELETE key=tasks:user:2\n2026-05-25 16:28:10,397 INFO httpx HTTP Request: PUT http://testserver/tasks/477 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,399 INFO task_management \n            Listing tasks\n            status=TaskStatus.PENDING\n            assigned_to=None\n            created_by=None\n            limit=100\n            offset=0\n            \n2026-05-25 16:28:10,401 INFO httpx HTTP Request: GET http://testserver/tasks/?status=pending&amp;amp;limit=100 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n------------------------------ Captured log call -------------------------------\nINFO     task_management:task_service.py:63 Creating task created_by=1\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:63 Creating task created_by=1\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:63 Creating task created_by=2\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:2\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:63 Creating task created_by=2\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:2\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:269 Updating task_id=476\nINFO     task_management:cache_service.py:76 Cache DELETE key=task:476\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/476 &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:269 Updating task_id=477\nINFO     task_management:cache_service.py:76 Cache DELETE key=task:477\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:2\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/477 &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:269 Updating task_id=477\nINFO     task_management:task_service.py:313 Queueing celery task for task_id=477\nINFO     task_management:cache_service.py:76 Cache DELETE key=task:477\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:2\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/477 &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:120 \n            Listing tasks\n            status=TaskStatus.PENDING\n            assigned_to=None\n            created_by=None\n            limit=100\n            offset=0\n            \nINFO     httpx:_client.py:1025 HTTP Request: GET http://testserver/tasks/?status=pending&amp;amp;limit=100 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n&#34;}], &#34;tests/integration/test_query.py::test_filter_by_assigned_to&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/integration/test_query.py::test_filter_by_assigned_to&#34;, &#34;duration&#34;: &#34;42 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/integration/test_query.py::test_filter_by_assigned_to&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;42 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stderr call -----------------------------\n2026-05-25 16:28:10,405 INFO task_management Creating task created_by=1\n2026-05-25 16:28:10,407 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,408 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,410 INFO task_management Creating task created_by=1\n2026-05-25 16:28:10,412 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,413 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,415 INFO task_management Creating task created_by=2\n2026-05-25 16:28:10,416 INFO task_management Cache DELETE key=tasks:user:2\n2026-05-25 16:28:10,417 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,419 INFO task_management Creating task created_by=2\n2026-05-25 16:28:10,421 INFO task_management Cache DELETE key=tasks:user:2\n2026-05-25 16:28:10,422 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,425 INFO task_management Updating task_id=480\n2026-05-25 16:28:10,427 INFO task_management Cache DELETE key=task:480\n2026-05-25 16:28:10,427 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,428 INFO httpx HTTP Request: PUT http://testserver/tasks/480 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,430 INFO task_management Updating task_id=481\n2026-05-25 16:28:10,433 INFO task_management Cache DELETE key=task:481\n2026-05-25 16:28:10,433 INFO task_management Cache DELETE key=tasks:user:2\n2026-05-25 16:28:10,434 INFO httpx HTTP Request: PUT http://testserver/tasks/481 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,436 INFO task_management Updating task_id=481\n2026-05-25 16:28:10,438 INFO task_management Queueing celery task for task_id=481\n2026-05-25 16:28:10,438 INFO task_management Cache DELETE key=task:481\n2026-05-25 16:28:10,438 INFO task_management Cache DELETE key=tasks:user:2\n2026-05-25 16:28:10,439 INFO httpx HTTP Request: PUT http://testserver/tasks/481 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,441 INFO task_management \n            Listing tasks\n            status=None\n            assigned_to=1\n            created_by=None\n            limit=100\n            offset=0\n            \n2026-05-25 16:28:10,443 INFO httpx HTTP Request: GET http://testserver/tasks/?assigned_to=1&amp;amp;limit=100 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n------------------------------ Captured log call -------------------------------\nINFO     task_management:task_service.py:63 Creating task created_by=1\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:63 Creating task created_by=1\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:63 Creating task created_by=2\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:2\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:63 Creating task created_by=2\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:2\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:269 Updating task_id=480\nINFO     task_management:cache_service.py:76 Cache DELETE key=task:480\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/480 &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:269 Updating task_id=481\nINFO     task_management:cache_service.py:76 Cache DELETE key=task:481\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:2\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/481 &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:269 Updating task_id=481\nINFO     task_management:task_service.py:313 Queueing celery task for task_id=481\nINFO     task_management:cache_service.py:76 Cache DELETE key=task:481\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:2\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/481 &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:120 \n            Listing tasks\n            status=None\n            assigned_to=1\n            created_by=None\n            limit=100\n            offset=0\n            \nINFO     httpx:_client.py:1025 HTTP Request: GET http://testserver/tasks/?assigned_to=1&amp;amp;limit=100 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n&#34;}], &#34;tests/integration/test_query.py::test_filter_by_created_by&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/integration/test_query.py::test_filter_by_created_by&#34;, &#34;duration&#34;: &#34;43 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/integration/test_query.py::test_filter_by_created_by&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;43 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stderr call -----------------------------\n2026-05-25 16:28:10,448 INFO task_management Creating task created_by=1\n2026-05-25 16:28:10,450 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,451 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,453 INFO task_management Creating task created_by=1\n2026-05-25 16:28:10,454 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,456 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,457 INFO task_management Creating task created_by=2\n2026-05-25 16:28:10,459 INFO task_management Cache DELETE key=tasks:user:2\n2026-05-25 16:28:10,461 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,462 INFO task_management Creating task created_by=2\n2026-05-25 16:28:10,464 INFO task_management Cache DELETE key=tasks:user:2\n2026-05-25 16:28:10,465 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,467 INFO task_management Updating task_id=484\n2026-05-25 16:28:10,470 INFO task_management Cache DELETE key=task:484\n2026-05-25 16:28:10,470 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,471 INFO httpx HTTP Request: PUT http://testserver/tasks/484 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,473 INFO task_management Updating task_id=485\n2026-05-25 16:28:10,476 INFO task_management Cache DELETE key=task:485\n2026-05-25 16:28:10,476 INFO task_management Cache DELETE key=tasks:user:2\n2026-05-25 16:28:10,477 INFO httpx HTTP Request: PUT http://testserver/tasks/485 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,479 INFO task_management Updating task_id=485\n2026-05-25 16:28:10,481 INFO task_management Queueing celery task for task_id=485\n2026-05-25 16:28:10,482 INFO task_management Cache DELETE key=task:485\n2026-05-25 16:28:10,482 INFO task_management Cache DELETE key=tasks:user:2\n2026-05-25 16:28:10,483 INFO httpx HTTP Request: PUT http://testserver/tasks/485 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,485 INFO task_management \n            Listing tasks\n            status=None\n            assigned_to=None\n            created_by=2\n            limit=100\n            offset=0\n            \n2026-05-25 16:28:10,486 INFO task_management Cache SET key=tasks:user:2\n2026-05-25 16:28:10,487 INFO httpx HTTP Request: GET http://testserver/tasks/?created_by=2&amp;amp;limit=100 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n------------------------------ Captured log call -------------------------------\nINFO     task_management:task_service.py:63 Creating task created_by=1\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:63 Creating task created_by=1\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:63 Creating task created_by=2\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:2\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:63 Creating task created_by=2\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:2\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:269 Updating task_id=484\nINFO     task_management:cache_service.py:76 Cache DELETE key=task:484\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/484 &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:269 Updating task_id=485\nINFO     task_management:cache_service.py:76 Cache DELETE key=task:485\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:2\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/485 &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:269 Updating task_id=485\nINFO     task_management:task_service.py:313 Queueing celery task for task_id=485\nINFO     task_management:cache_service.py:76 Cache DELETE key=task:485\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:2\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/485 &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:120 \n            Listing tasks\n            status=None\n            assigned_to=None\n            created_by=2\n            limit=100\n            offset=0\n            \nINFO     task_management:cache_service.py:58 Cache SET key=tasks:user:2\nINFO     httpx:_client.py:1025 HTTP Request: GET http://testserver/tasks/?created_by=2&amp;amp;limit=100 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n&#34;}], &#34;tests/integration/test_query.py::test_pagination_limit_and_offset&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/integration/test_query.py::test_pagination_limit_and_offset&#34;, &#34;duration&#34;: &#34;48 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/integration/test_query.py::test_pagination_limit_and_offset&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;48 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stderr call -----------------------------\n2026-05-25 16:28:10,491 INFO task_management Creating task created_by=1\n2026-05-25 16:28:10,493 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,494 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,496 INFO task_management Creating task created_by=1\n2026-05-25 16:28:10,499 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,500 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,502 INFO task_management Creating task created_by=2\n2026-05-25 16:28:10,504 INFO task_management Cache DELETE key=tasks:user:2\n2026-05-25 16:28:10,505 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,507 INFO task_management Creating task created_by=2\n2026-05-25 16:28:10,509 INFO task_management Cache DELETE key=tasks:user:2\n2026-05-25 16:28:10,510 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,512 INFO task_management Updating task_id=488\n2026-05-25 16:28:10,515 INFO task_management Cache DELETE key=task:488\n2026-05-25 16:28:10,515 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,516 INFO httpx HTTP Request: PUT http://testserver/tasks/488 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,518 INFO task_management Updating task_id=489\n2026-05-25 16:28:10,520 INFO task_management Cache DELETE key=task:489\n2026-05-25 16:28:10,521 INFO task_management Cache DELETE key=tasks:user:2\n2026-05-25 16:28:10,522 INFO httpx HTTP Request: PUT http://testserver/tasks/489 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,523 INFO task_management Updating task_id=489\n2026-05-25 16:28:10,525 INFO task_management Queueing celery task for task_id=489\n2026-05-25 16:28:10,526 INFO task_management Cache DELETE key=task:489\n2026-05-25 16:28:10,526 INFO task_management Cache DELETE key=tasks:user:2\n2026-05-25 16:28:10,527 INFO httpx HTTP Request: PUT http://testserver/tasks/489 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,529 INFO task_management \n            Listing tasks\n            status=None\n            assigned_to=None\n            created_by=None\n            limit=2\n            offset=0\n            \n2026-05-25 16:28:10,531 INFO httpx HTTP Request: GET http://testserver/tasks/?limit=2&amp;amp;offset=0 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,534 INFO task_management \n            Listing tasks\n            status=None\n            assigned_to=None\n            created_by=None\n            limit=2\n            offset=2\n            \n2026-05-25 16:28:10,535 INFO httpx HTTP Request: GET http://testserver/tasks/?limit=2&amp;amp;offset=2 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n------------------------------ Captured log call -------------------------------\nINFO     task_management:task_service.py:63 Creating task created_by=1\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:63 Creating task created_by=1\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:63 Creating task created_by=2\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:2\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:63 Creating task created_by=2\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:2\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:269 Updating task_id=488\nINFO     task_management:cache_service.py:76 Cache DELETE key=task:488\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/488 &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:269 Updating task_id=489\nINFO     task_management:cache_service.py:76 Cache DELETE key=task:489\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:2\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/489 &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:269 Updating task_id=489\nINFO     task_management:task_service.py:313 Queueing celery task for task_id=489\nINFO     task_management:cache_service.py:76 Cache DELETE key=task:489\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:2\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/489 &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:120 \n            Listing tasks\n            status=None\n            assigned_to=None\n            created_by=None\n            limit=2\n            offset=0\n            \nINFO     httpx:_client.py:1025 HTTP Request: GET http://testserver/tasks/?limit=2&amp;amp;offset=0 &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:120 \n            Listing tasks\n            status=None\n            assigned_to=None\n            created_by=None\n            limit=2\n            offset=2\n            \nINFO     httpx:_client.py:1025 HTTP Request: GET http://testserver/tasks/?limit=2&amp;amp;offset=2 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n&#34;}], &#34;tests/integration/test_query.py::test_sort_by_id_ascending_vs_descending&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/integration/test_query.py::test_sort_by_id_ascending_vs_descending&#34;, &#34;duration&#34;: &#34;80 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/integration/test_query.py::test_sort_by_id_ascending_vs_descending&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;80 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stderr call -----------------------------\n2026-05-25 16:28:10,540 INFO task_management Creating task created_by=1\n2026-05-25 16:28:10,542 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,543 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,545 INFO task_management Creating task created_by=1\n2026-05-25 16:28:10,547 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,548 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,550 INFO task_management Creating task created_by=2\n2026-05-25 16:28:10,552 INFO task_management Cache DELETE key=tasks:user:2\n2026-05-25 16:28:10,553 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,576 INFO task_management Creating task created_by=2\n2026-05-25 16:28:10,582 INFO task_management Cache DELETE key=tasks:user:2\n2026-05-25 16:28:10,585 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,588 INFO task_management Updating task_id=492\n2026-05-25 16:28:10,593 INFO task_management Cache DELETE key=task:492\n2026-05-25 16:28:10,593 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,595 INFO httpx HTTP Request: PUT http://testserver/tasks/492 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,597 INFO task_management Updating task_id=493\n2026-05-25 16:28:10,600 INFO task_management Cache DELETE key=task:493\n2026-05-25 16:28:10,600 INFO task_management Cache DELETE key=tasks:user:2\n2026-05-25 16:28:10,601 INFO httpx HTTP Request: PUT http://testserver/tasks/493 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,603 INFO task_management Updating task_id=493\n2026-05-25 16:28:10,605 INFO task_management Queueing celery task for task_id=493\n2026-05-25 16:28:10,606 INFO task_management Cache DELETE key=task:493\n2026-05-25 16:28:10,606 INFO task_management Cache DELETE key=tasks:user:2\n2026-05-25 16:28:10,607 INFO httpx HTTP Request: PUT http://testserver/tasks/493 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,609 INFO task_management \n            Listing tasks\n            status=None\n            assigned_to=None\n            created_by=None\n            limit=100\n            offset=0\n            \n2026-05-25 16:28:10,612 INFO httpx HTTP Request: GET http://testserver/tasks/?sort_by=id&amp;amp;order=asc&amp;amp;limit=100 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,614 INFO task_management \n            Listing tasks\n            status=None\n            assigned_to=None\n            created_by=None\n            limit=100\n            offset=0\n            \n2026-05-25 16:28:10,616 INFO httpx HTTP Request: GET http://testserver/tasks/?sort_by=id&amp;amp;order=desc&amp;amp;limit=100 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n------------------------------ Captured log call -------------------------------\nINFO     task_management:task_service.py:63 Creating task created_by=1\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:63 Creating task created_by=1\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:63 Creating task created_by=2\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:2\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:63 Creating task created_by=2\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:2\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:269 Updating task_id=492\nINFO     task_management:cache_service.py:76 Cache DELETE key=task:492\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/492 &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:269 Updating task_id=493\nINFO     task_management:cache_service.py:76 Cache DELETE key=task:493\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:2\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/493 &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:269 Updating task_id=493\nINFO     task_management:task_service.py:313 Queueing celery task for task_id=493\nINFO     task_management:cache_service.py:76 Cache DELETE key=task:493\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:2\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/493 &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:120 \n            Listing tasks\n            status=None\n            assigned_to=None\n            created_by=None\n            limit=100\n            offset=0\n            \nINFO     httpx:_client.py:1025 HTTP Request: GET http://testserver/tasks/?sort_by=id&amp;amp;order=asc&amp;amp;limit=100 &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:120 \n            Listing tasks\n            status=None\n            assigned_to=None\n            created_by=None\n            limit=100\n            offset=0\n            \nINFO     httpx:_client.py:1025 HTTP Request: GET http://testserver/tasks/?sort_by=id&amp;amp;order=desc&amp;amp;limit=100 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n&#34;}], &#34;tests/integration/test_query.py::test_invalid_status_filter_returns_422&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/integration/test_query.py::test_invalid_status_filter_returns_422&#34;, &#34;duration&#34;: &#34;5 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/integration/test_query.py::test_invalid_status_filter_returns_422&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;5 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stderr call -----------------------------\n2026-05-25 16:28:10,621 INFO httpx HTTP Request: GET http://testserver/tasks/?status=garbage &amp;quot;HTTP/1.1 422 Unprocessable Entity&amp;quot;\n\n------------------------------ Captured log call -------------------------------\nINFO     httpx:_client.py:1025 HTTP Request: GET http://testserver/tasks/?status=garbage &amp;quot;HTTP/1.1 422 Unprocessable Entity&amp;quot;\n\n&#34;}], &#34;tests/integration/test_query.py::test_invalid_pagination_param_returns_422&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/integration/test_query.py::test_invalid_pagination_param_returns_422&#34;, &#34;duration&#34;: &#34;4 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/integration/test_query.py::test_invalid_pagination_param_returns_422&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;4 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stderr call -----------------------------\n2026-05-25 16:28:10,626 INFO httpx HTTP Request: GET http://testserver/tasks/?limit=not-a-number &amp;quot;HTTP/1.1 422 Unprocessable Entity&amp;quot;\n\n------------------------------ Captured log call -------------------------------\nINFO     httpx:_client.py:1025 HTTP Request: GET http://testserver/tasks/?limit=not-a-number &amp;quot;HTTP/1.1 422 Unprocessable Entity&amp;quot;\n\n&#34;}], &#34;tests/integration/test_status.py::test_valid_pending_to_in_progress&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/integration/test_status.py::test_valid_pending_to_in_progress&#34;, &#34;duration&#34;: &#34;14 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/integration/test_status.py::test_valid_pending_to_in_progress&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;14 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stderr call -----------------------------\n2026-05-25 16:28:10,630 INFO task_management Creating task created_by=1\n2026-05-25 16:28:10,633 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,634 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,636 INFO task_management Updating task_id=495\n2026-05-25 16:28:10,640 INFO task_management Cache DELETE key=task:495\n2026-05-25 16:28:10,640 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,641 INFO httpx HTTP Request: PUT http://testserver/tasks/495 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n------------------------------ Captured log call -------------------------------\nINFO     task_management:task_service.py:63 Creating task created_by=1\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:269 Updating task_id=495\nINFO     task_management:cache_service.py:76 Cache DELETE key=task:495\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/495 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n&#34;}], &#34;tests/integration/test_status.py::test_reject_terminal_completed_state&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/integration/test_status.py::test_reject_terminal_completed_state&#34;, &#34;duration&#34;: &#34;24 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/integration/test_status.py::test_reject_terminal_completed_state&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;24 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stderr call -----------------------------\n2026-05-25 16:28:10,646 INFO task_management Creating task created_by=1\n2026-05-25 16:28:10,648 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,649 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,651 INFO task_management Updating task_id=496\n2026-05-25 16:28:10,653 INFO task_management Cache DELETE key=task:496\n2026-05-25 16:28:10,654 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,655 INFO httpx HTTP Request: PUT http://testserver/tasks/496 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,657 INFO task_management Updating task_id=496\n2026-05-25 16:28:10,659 INFO task_management Queueing celery task for task_id=496\n2026-05-25 16:28:10,659 INFO task_management Cache DELETE key=task:496\n2026-05-25 16:28:10,660 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,661 INFO httpx HTTP Request: PUT http://testserver/tasks/496 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,663 INFO task_management Updating task_id=496\n2026-05-25 16:28:10,665 INFO httpx HTTP Request: PUT http://testserver/tasks/496 &amp;quot;HTTP/1.1 400 Bad Request&amp;quot;\n\n------------------------------ Captured log call -------------------------------\nINFO     task_management:task_service.py:63 Creating task created_by=1\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:269 Updating task_id=496\nINFO     task_management:cache_service.py:76 Cache DELETE key=task:496\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/496 &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:269 Updating task_id=496\nINFO     task_management:task_service.py:313 Queueing celery task for task_id=496\nINFO     task_management:cache_service.py:76 Cache DELETE key=task:496\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/496 &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:269 Updating task_id=496\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/496 &amp;quot;HTTP/1.1 400 Bad Request&amp;quot;\n\n&#34;}], &#34;tests/integration/test_status.py::test_reject_terminal_cancelled_state&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/integration/test_status.py::test_reject_terminal_cancelled_state&#34;, &#34;duration&#34;: &#34;18 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/integration/test_status.py::test_reject_terminal_cancelled_state&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;18 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stderr call -----------------------------\n2026-05-25 16:28:10,669 INFO task_management Creating task created_by=1\n2026-05-25 16:28:10,671 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,672 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,675 INFO task_management Updating task_id=497\n2026-05-25 16:28:10,678 INFO task_management Cache DELETE key=task:497\n2026-05-25 16:28:10,678 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,680 INFO httpx HTTP Request: PUT http://testserver/tasks/497 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,682 INFO task_management Updating task_id=497\n2026-05-25 16:28:10,683 INFO httpx HTTP Request: PUT http://testserver/tasks/497 &amp;quot;HTTP/1.1 400 Bad Request&amp;quot;\n\n------------------------------ Captured log call -------------------------------\nINFO     task_management:task_service.py:63 Creating task created_by=1\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:269 Updating task_id=497\nINFO     task_management:cache_service.py:76 Cache DELETE key=task:497\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/497 &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:269 Updating task_id=497\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/497 &amp;quot;HTTP/1.1 400 Bad Request&amp;quot;\n\n&#34;}], &#34;tests/integration/test_status.py::test_invalid_status_value_returns_422&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/integration/test_status.py::test_invalid_status_value_returns_422&#34;, &#34;duration&#34;: &#34;10 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/integration/test_status.py::test_invalid_status_value_returns_422&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;10 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stderr call -----------------------------\n2026-05-25 16:28:10,688 INFO task_management Creating task created_by=1\n2026-05-25 16:28:10,690 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,691 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,694 INFO httpx HTTP Request: PUT http://testserver/tasks/498 &amp;quot;HTTP/1.1 422 Unprocessable Entity&amp;quot;\n\n------------------------------ Captured log call -------------------------------\nINFO     task_management:task_service.py:63 Creating task created_by=1\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/498 &amp;quot;HTTP/1.1 422 Unprocessable Entity&amp;quot;\n\n&#34;}], &#34;tests/integration/test_status.py::test_concurrent_status_updates_keep_state_valid&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/integration/test_status.py::test_concurrent_status_updates_keep_state_valid&#34;, &#34;duration&#34;: &#34;21 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/integration/test_status.py::test_concurrent_status_updates_keep_state_valid&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;21 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stderr call -----------------------------\n2026-05-25 16:28:10,698 INFO task_management Creating task created_by=1\n2026-05-25 16:28:10,700 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,701 INFO httpx HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,703 INFO task_management Updating task_id=499\n2026-05-25 16:28:10,706 INFO task_management Cache DELETE key=task:499\n2026-05-25 16:28:10,706 INFO task_management Cache DELETE key=tasks:user:1\n2026-05-25 16:28:10,709 INFO task_management Updating task_id=499\n2026-05-25 16:28:10,710 INFO httpx HTTP Request: PUT http://testserver/tasks/499 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n2026-05-25 16:28:10,711 INFO httpx HTTP Request: PUT http://testserver/tasks/499 &amp;quot;HTTP/1.1 400 Bad Request&amp;quot;\n2026-05-25 16:28:10,713 INFO task_management GET /tasks/499 endpoint hit\n2026-05-25 16:28:10,713 INFO task_management Fetching task_id=499\n2026-05-25 16:28:10,714 INFO task_management Cache SET key=task:499\n2026-05-25 16:28:10,715 INFO httpx HTTP Request: GET http://testserver/tasks/499 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n------------------------------ Captured log call -------------------------------\nINFO     task_management:task_service.py:63 Creating task created_by=1\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/tasks/ &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     task_management:task_service.py:269 Updating task_id=499\nINFO     task_management:cache_service.py:76 Cache DELETE key=task:499\nINFO     task_management:cache_service.py:76 Cache DELETE key=tasks:user:1\nINFO     task_management:task_service.py:269 Updating task_id=499\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/499 &amp;quot;HTTP/1.1 200 OK&amp;quot;\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/tasks/499 &amp;quot;HTTP/1.1 400 Bad Request&amp;quot;\nINFO     task_management:task_routes.py:85 GET /tasks/499 endpoint hit\nINFO     task_management:task_service.py:87 Fetching task_id=499\nINFO     task_management:cache_service.py:58 Cache SET key=task:499\nINFO     httpx:_client.py:1025 HTTP Request: GET http://testserver/tasks/499 &amp;quot;HTTP/1.1 200 OK&amp;quot;\n\n&#34;}]}, &#34;renderCollapsed&#34;: [&#34;passed&#34;], &#34;initialSort&#34;: &#34;result&#34;, &#34;title&#34;: &#34;report.html&#34;}"></div>
+    <script>
+      (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+const { getCollapsedCategory, setCollapsedIds } = require('./storage.js')
+
+class DataManager {
+    setManager(data) {
+        const collapsedCategories = [...getCollapsedCategory(data.renderCollapsed)]
+        const collapsedIds = []
+        const tests = Object.values(data.tests).flat().map((test, index) => {
+            const collapsed = collapsedCategories.includes(test.result.toLowerCase())
+            const id = `test_${index}`
+            if (collapsed) {
+                collapsedIds.push(id)
+            }
+            return {
+                ...test,
+                id,
+                collapsed,
+            }
+        })
+        const dataBlob = { ...data, tests }
+        this.data = { ...dataBlob }
+        this.renderData = { ...dataBlob }
+        setCollapsedIds(collapsedIds)
+    }
+
+    get allData() {
+        return { ...this.data }
+    }
+
+    resetRender() {
+        this.renderData = { ...this.data }
+    }
+
+    setRender(data) {
+        this.renderData.tests = [...data]
+    }
+
+    toggleCollapsedItem(id) {
+        this.renderData.tests = this.renderData.tests.map((test) =>
+            test.id === id ? { ...test, collapsed: !test.collapsed } : test,
+        )
+    }
+
+    set allCollapsed(collapsed) {
+        this.renderData = { ...this.renderData, tests: [...this.renderData.tests.map((test) => (
+            { ...test, collapsed }
+        ))] }
+    }
+
+    get testSubset() {
+        return [...this.renderData.tests]
+    }
+
+    get environment() {
+        return this.renderData.environment
+    }
+
+    get initialSort() {
+        return this.data.initialSort
+    }
+}
+
+module.exports = {
+    manager: new DataManager(),
+}
+
+},{"./storage.js":8}],2:[function(require,module,exports){
+const mediaViewer = require('./mediaviewer.js')
+const templateEnvRow = document.getElementById('template_environment_row')
+const templateResult = document.getElementById('template_results-table__tbody')
+
+function htmlToElements(html) {
+    const temp = document.createElement('template')
+    temp.innerHTML = html
+    return temp.content.childNodes
+}
+
+const find = (selector, elem) => {
+    if (!elem) {
+        elem = document
+    }
+    return elem.querySelector(selector)
+}
+
+const findAll = (selector, elem) => {
+    if (!elem) {
+        elem = document
+    }
+    return [...elem.querySelectorAll(selector)]
+}
+
+const dom = {
+    getStaticRow: (key, value) => {
+        const envRow = templateEnvRow.content.cloneNode(true)
+        const isObj = typeof value === 'object' && value !== null
+        const values = isObj ? Object.keys(value).map((k) => `${k}: ${value[k]}`) : null
+
+        const valuesElement = htmlToElements(
+            values ? `<ul>${values.map((val) => `<li>${val}</li>`).join('')}<ul>` : `<div>${value}</div>`)[0]
+        const td = findAll('td', envRow)
+        td[0].textContent = key
+        td[1].appendChild(valuesElement)
+
+        return envRow
+    },
+    getResultTBody: ({ testId, id, log, extras, resultsTableRow, tableHtml, result, collapsed }) => {
+        const resultBody = templateResult.content.cloneNode(true)
+        resultBody.querySelector('tbody').classList.add(result.toLowerCase())
+        resultBody.querySelector('tbody').id = testId
+        resultBody.querySelector('.collapsible').dataset.id = id
+
+        resultsTableRow.forEach((html) => {
+            const t = document.createElement('template')
+            t.innerHTML = html
+            resultBody.querySelector('.collapsible').appendChild(t.content)
+        })
+
+        if (log) {
+            // Wrap lines starting with "E" with span.error to color those lines red
+            const wrappedLog = log.replace(/^E.*$/gm, (match) => `<span class="error">${match}</span>`)
+            resultBody.querySelector('.log').innerHTML = wrappedLog
+        } else {
+            resultBody.querySelector('.log').remove()
+        }
+
+        if (collapsed) {
+            resultBody.querySelector('.collapsible > .col-result')?.classList.add('collapsed')
+            resultBody.querySelector('.extras-row').classList.add('hidden')
+        } else {
+            resultBody.querySelector('.collapsible > .col-result')?.classList.remove('collapsed')
+        }
+
+        const media = []
+        extras?.forEach(({ name, format_type, content }) => {
+            if (['image', 'video'].includes(format_type)) {
+                media.push({ path: content, name, format_type })
+            }
+
+            if (format_type === 'html') {
+                resultBody.querySelector('.extraHTML').insertAdjacentHTML('beforeend', `<div>${content}</div>`)
+            }
+        })
+        mediaViewer.setup(resultBody, media)
+
+        // Add custom html from the pytest_html_results_table_html hook
+        tableHtml?.forEach((item) => {
+            resultBody.querySelector('td[class="extra"]').insertAdjacentHTML('beforeend', item)
+        })
+
+        return resultBody
+    },
+}
+
+module.exports = {
+    dom,
+    htmlToElements,
+    find,
+    findAll,
+}
+
+},{"./mediaviewer.js":6}],3:[function(require,module,exports){
+const { manager } = require('./datamanager.js')
+const { doSort } = require('./sort.js')
+const storageModule = require('./storage.js')
+
+const getFilteredSubSet = (filter) =>
+    manager.allData.tests.filter(({ result }) => filter.includes(result.toLowerCase()))
+
+const doInitFilter = () => {
+    const currentFilter = storageModule.getVisible()
+    const filteredSubset = getFilteredSubSet(currentFilter)
+    manager.setRender(filteredSubset)
+}
+
+const doFilter = (type, show) => {
+    if (show) {
+        storageModule.showCategory(type)
+    } else {
+        storageModule.hideCategory(type)
+    }
+
+    const currentFilter = storageModule.getVisible()
+    const filteredSubset = getFilteredSubSet(currentFilter)
+    manager.setRender(filteredSubset)
+
+    const sortColumn = storageModule.getSort()
+    doSort(sortColumn, true)
+}
+
+module.exports = {
+    doFilter,
+    doInitFilter,
+}
+
+},{"./datamanager.js":1,"./sort.js":7,"./storage.js":8}],4:[function(require,module,exports){
+const { redraw, bindEvents, renderStatic } = require('./main.js')
+const { doInitFilter } = require('./filter.js')
+const { doInitSort } = require('./sort.js')
+const { manager } = require('./datamanager.js')
+const data = JSON.parse(document.getElementById('data-container').dataset.jsonblob)
+
+function init() {
+    manager.setManager(data)
+    doInitFilter()
+    doInitSort()
+    renderStatic()
+    redraw()
+    bindEvents()
+}
+
+init()
+
+},{"./datamanager.js":1,"./filter.js":3,"./main.js":5,"./sort.js":7}],5:[function(require,module,exports){
+const { dom, find, findAll } = require('./dom.js')
+const { manager } = require('./datamanager.js')
+const { doSort } = require('./sort.js')
+const { doFilter } = require('./filter.js')
+const {
+    getVisible,
+    getCollapsedIds,
+    setCollapsedIds,
+    getSort,
+    getSortDirection,
+    possibleFilters,
+} = require('./storage.js')
+
+const removeChildren = (node) => {
+    while (node.firstChild) {
+        node.removeChild(node.firstChild)
+    }
+}
+
+const renderStatic = () => {
+    const renderEnvironmentTable = () => {
+        const environment = manager.environment
+        const rows = Object.keys(environment).map((key) => dom.getStaticRow(key, environment[key]))
+        const table = document.getElementById('environment')
+        removeChildren(table)
+        rows.forEach((row) => table.appendChild(row))
+    }
+    renderEnvironmentTable()
+}
+
+const addItemToggleListener = (elem) => {
+    elem.addEventListener('click', ({ target }) => {
+        const id = target.parentElement.dataset.id
+        manager.toggleCollapsedItem(id)
+
+        const collapsedIds = getCollapsedIds()
+        if (collapsedIds.includes(id)) {
+            const updated = collapsedIds.filter((item) => item !== id)
+            setCollapsedIds(updated)
+        } else {
+            collapsedIds.push(id)
+            setCollapsedIds(collapsedIds)
+        }
+        redraw()
+    })
+}
+
+const renderContent = (tests) => {
+    const sortAttr = getSort(manager.initialSort)
+    const sortAsc = JSON.parse(getSortDirection())
+    const rows = tests.map(dom.getResultTBody)
+    const table = document.getElementById('results-table')
+    const tableHeader = document.getElementById('results-table-head')
+
+    const newTable = document.createElement('table')
+    newTable.id = 'results-table'
+
+    // remove all sorting classes and set the relevant
+    findAll('.sortable', tableHeader).forEach((elem) => elem.classList.remove('asc', 'desc'))
+    tableHeader.querySelector(`.sortable[data-column-type="${sortAttr}"]`)?.classList.add(sortAsc ? 'desc' : 'asc')
+    newTable.appendChild(tableHeader)
+
+    if (!rows.length) {
+        const emptyTable = document.getElementById('template_results-table__body--empty').content.cloneNode(true)
+        newTable.appendChild(emptyTable)
+    } else {
+        rows.forEach((row) => {
+            if (!!row) {
+                findAll('.collapsible td:not(.col-links', row).forEach(addItemToggleListener)
+                find('.logexpander', row).addEventListener('click',
+                    (evt) => evt.target.parentNode.classList.toggle('expanded'),
+                )
+                newTable.appendChild(row)
+            }
+        })
+    }
+
+    table.replaceWith(newTable)
+}
+
+const renderDerived = () => {
+    const currentFilter = getVisible()
+    possibleFilters.forEach((result) => {
+        const input = document.querySelector(`input[data-test-result="${result}"]`)
+        input.checked = currentFilter.includes(result)
+    })
+}
+
+const bindEvents = () => {
+    const filterColumn = (evt) => {
+        const { target: element } = evt
+        const { testResult } = element.dataset
+
+        doFilter(testResult, element.checked)
+        const collapsedIds = getCollapsedIds()
+        const updated = manager.renderData.tests.map((test) => {
+            return {
+                ...test,
+                collapsed: collapsedIds.includes(test.id),
+            }
+        })
+        manager.setRender(updated)
+        redraw()
+    }
+
+    const header = document.getElementById('environment-header')
+    header.addEventListener('click', () => {
+        const table = document.getElementById('environment')
+        table.classList.toggle('hidden')
+        header.classList.toggle('collapsed')
+    })
+
+    findAll('input[name="filter_checkbox"]').forEach((elem) => {
+        elem.addEventListener('click', filterColumn)
+    })
+
+    findAll('.sortable').forEach((elem) => {
+        elem.addEventListener('click', (evt) => {
+            const { target: element } = evt
+            const { columnType } = element.dataset
+            doSort(columnType)
+            redraw()
+        })
+    })
+
+    document.getElementById('show_all_details').addEventListener('click', () => {
+        manager.allCollapsed = false
+        setCollapsedIds([])
+        redraw()
+    })
+    document.getElementById('hide_all_details').addEventListener('click', () => {
+        manager.allCollapsed = true
+        const allIds = manager.renderData.tests.map((test) => test.id)
+        setCollapsedIds(allIds)
+        redraw()
+    })
+}
+
+const redraw = () => {
+    const { testSubset } = manager
+
+    renderContent(testSubset)
+    renderDerived()
+}
+
+module.exports = {
+    redraw,
+    bindEvents,
+    renderStatic,
+}
+
+},{"./datamanager.js":1,"./dom.js":2,"./filter.js":3,"./sort.js":7,"./storage.js":8}],6:[function(require,module,exports){
+class MediaViewer {
+    constructor(assets) {
+        this.assets = assets
+        this.index = 0
+    }
+
+    nextActive() {
+        this.index = this.index === this.assets.length - 1 ? 0 : this.index + 1
+        return [this.activeFile, this.index]
+    }
+
+    prevActive() {
+        this.index = this.index === 0 ? this.assets.length - 1 : this.index -1
+        return [this.activeFile, this.index]
+    }
+
+    get currentIndex() {
+        return this.index
+    }
+
+    get activeFile() {
+        return this.assets[this.index]
+    }
+}
+
+
+const setup = (resultBody, assets) => {
+    if (!assets.length) {
+        resultBody.querySelector('.media').classList.add('hidden')
+        return
+    }
+
+    const mediaViewer = new MediaViewer(assets)
+    const container = resultBody.querySelector('.media-container')
+    const leftArrow = resultBody.querySelector('.media-container__nav--left')
+    const rightArrow = resultBody.querySelector('.media-container__nav--right')
+    const mediaName = resultBody.querySelector('.media__name')
+    const counter = resultBody.querySelector('.media__counter')
+    const imageEl = resultBody.querySelector('img')
+    const sourceEl = resultBody.querySelector('source')
+    const videoEl = resultBody.querySelector('video')
+
+    const setImg = (media, index) => {
+        if (media?.format_type === 'image') {
+            imageEl.src = media.path
+
+            imageEl.classList.remove('hidden')
+            videoEl.classList.add('hidden')
+        } else if (media?.format_type === 'video') {
+            sourceEl.src = media.path
+
+            videoEl.classList.remove('hidden')
+            imageEl.classList.add('hidden')
+        }
+
+        mediaName.innerText = media?.name
+        counter.innerText = `${index + 1} / ${assets.length}`
+    }
+    setImg(mediaViewer.activeFile, mediaViewer.currentIndex)
+
+    const moveLeft = () => {
+        const [media, index] = mediaViewer.prevActive()
+        setImg(media, index)
+    }
+    const doRight = () => {
+        const [media, index] = mediaViewer.nextActive()
+        setImg(media, index)
+    }
+    const openImg = () => {
+        window.open(mediaViewer.activeFile.path, '_blank')
+    }
+    if (assets.length === 1) {
+        container.classList.add('media-container--fullscreen')
+    } else {
+        leftArrow.addEventListener('click', moveLeft)
+        rightArrow.addEventListener('click', doRight)
+    }
+    imageEl.addEventListener('click', openImg)
+}
+
+module.exports = {
+    setup,
+}
+
+},{}],7:[function(require,module,exports){
+const { manager } = require('./datamanager.js')
+const storageModule = require('./storage.js')
+
+const genericSort = (list, key, ascending, customOrder) => {
+    let sorted
+    if (customOrder) {
+        sorted = list.sort((a, b) => {
+            const aValue = a.result.toLowerCase()
+            const bValue = b.result.toLowerCase()
+
+            const aIndex = customOrder.findIndex((item) => item.toLowerCase() === aValue)
+            const bIndex = customOrder.findIndex((item) => item.toLowerCase() === bValue)
+
+            // Compare the indices to determine the sort order
+            return aIndex - bIndex
+        })
+    } else {
+        sorted = list.sort((a, b) => a[key] === b[key] ? 0 : a[key] > b[key] ? 1 : -1)
+    }
+
+    if (ascending) {
+        sorted.reverse()
+    }
+    return sorted
+}
+
+const durationSort = (list, ascending) => {
+    const parseDuration = (duration) => {
+        if (duration.includes(':')) {
+            // If it's in the format "HH:mm:ss"
+            const [hours, minutes, seconds] = duration.split(':').map(Number)
+            return (hours * 3600 + minutes * 60 + seconds) * 1000
+        } else {
+            // If it's in the format "nnn ms"
+            return parseInt(duration)
+        }
+    }
+    const sorted = list.sort((a, b) => parseDuration(a['duration']) - parseDuration(b['duration']))
+    if (ascending) {
+        sorted.reverse()
+    }
+    return sorted
+}
+
+const doInitSort = () => {
+    const type = storageModule.getSort(manager.initialSort)
+    const ascending = storageModule.getSortDirection()
+    const list = manager.testSubset
+    const initialOrder = ['Error', 'Failed', 'Rerun', 'XFailed', 'XPassed', 'Skipped', 'Passed']
+
+    storageModule.setSort(type)
+    storageModule.setSortDirection(ascending)
+
+    if (type?.toLowerCase() === 'original') {
+        manager.setRender(list)
+    } else {
+        let sortedList
+        switch (type) {
+        case 'duration':
+            sortedList = durationSort(list, ascending)
+            break
+        case 'result':
+            sortedList = genericSort(list, type, ascending, initialOrder)
+            break
+        default:
+            sortedList = genericSort(list, type, ascending)
+            break
+        }
+        manager.setRender(sortedList)
+    }
+}
+
+const doSort = (type, skipDirection) => {
+    const newSortType = storageModule.getSort(manager.initialSort) !== type
+    const currentAsc = storageModule.getSortDirection()
+    let ascending
+    if (skipDirection) {
+        ascending = currentAsc
+    } else {
+        ascending = newSortType ? false : !currentAsc
+    }
+    storageModule.setSort(type)
+    storageModule.setSortDirection(ascending)
+
+    const list = manager.testSubset
+    const sortedList = type === 'duration' ? durationSort(list, ascending) : genericSort(list, type, ascending)
+    manager.setRender(sortedList)
+}
+
+module.exports = {
+    doInitSort,
+    doSort,
+}
+
+},{"./datamanager.js":1,"./storage.js":8}],8:[function(require,module,exports){
+const possibleFilters = [
+    'passed',
+    'skipped',
+    'failed',
+    'error',
+    'xfailed',
+    'xpassed',
+    'rerun',
+]
+
+const getVisible = () => {
+    const url = new URL(window.location.href)
+    const settings = new URLSearchParams(url.search).get('visible')
+    const lower = (item) => {
+        const lowerItem = item.toLowerCase()
+        if (possibleFilters.includes(lowerItem)) {
+            return lowerItem
+        }
+        return null
+    }
+    return settings === null ?
+        possibleFilters :
+        [...new Set(settings?.split(',').map(lower).filter((item) => item))]
+}
+
+const hideCategory = (categoryToHide) => {
+    const url = new URL(window.location.href)
+    const visibleParams = new URLSearchParams(url.search).get('visible')
+    const currentVisible = visibleParams ? visibleParams.split(',') : [...possibleFilters]
+    const settings = [...new Set(currentVisible)].filter((f) => f !== categoryToHide).join(',')
+
+    url.searchParams.set('visible', settings)
+    window.history.pushState({}, null, unescape(url.href))
+}
+
+const showCategory = (categoryToShow) => {
+    if (typeof window === 'undefined') {
+        return
+    }
+    const url = new URL(window.location.href)
+    const currentVisible = new URLSearchParams(url.search).get('visible')?.split(',').filter(Boolean) ||
+        [...possibleFilters]
+    const settings = [...new Set([categoryToShow, ...currentVisible])]
+    const noFilter = possibleFilters.length === settings.length || !settings.length
+
+    noFilter ? url.searchParams.delete('visible') : url.searchParams.set('visible', settings.join(','))
+    window.history.pushState({}, null, unescape(url.href))
+}
+
+const getSort = (initialSort) => {
+    const url = new URL(window.location.href)
+    let sort = new URLSearchParams(url.search).get('sort')
+    if (!sort) {
+        sort = initialSort || 'result'
+    }
+    return sort
+}
+
+const setSort = (type) => {
+    const url = new URL(window.location.href)
+    url.searchParams.set('sort', type)
+    window.history.pushState({}, null, unescape(url.href))
+}
+
+const getCollapsedCategory = (renderCollapsed) => {
+    let categories
+    if (typeof window !== 'undefined') {
+        const url = new URL(window.location.href)
+        const collapsedItems = new URLSearchParams(url.search).get('collapsed')
+        switch (true) {
+        case !renderCollapsed && collapsedItems === null:
+            categories = ['passed']
+            break
+        case collapsedItems?.length === 0 || /^["']{2}$/.test(collapsedItems):
+            categories = []
+            break
+        case /^all$/.test(collapsedItems) || collapsedItems === null && /^all$/.test(renderCollapsed):
+            categories = [...possibleFilters]
+            break
+        default:
+            categories = collapsedItems?.split(',').map((item) => item.toLowerCase()) || renderCollapsed
+            break
+        }
+    } else {
+        categories = []
+    }
+    return categories
+}
+
+const getSortDirection = () => JSON.parse(sessionStorage.getItem('sortAsc')) || false
+const setSortDirection = (ascending) => sessionStorage.setItem('sortAsc', ascending)
+
+const getCollapsedIds = () => JSON.parse(sessionStorage.getItem('collapsedIds')) || []
+const setCollapsedIds = (list) => sessionStorage.setItem('collapsedIds', JSON.stringify(list))
+
+module.exports = {
+    getVisible,
+    hideCategory,
+    showCategory,
+    getCollapsedIds,
+    setCollapsedIds,
+    getSort,
+    setSort,
+    getSortDirection,
+    setSortDirection,
+    getCollapsedCategory,
+    possibleFilters,
+}
+
+},{}]},{},[4]);
+    </script>
+  </footer>
+  </body>
+</html>

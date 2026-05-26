@@ -60,6 +60,8 @@ class TaskService:
         payload
     ):
 
+        """ Create task """
+
         logger.info(
             f"Creating task created_by={payload.created_by}"
         )
@@ -83,6 +85,8 @@ class TaskService:
         db: Session,
         task_id: int
     ):
+
+        """ Fetch task by id """
 
         logger.info(
             f"Fetching task_id={task_id}"
@@ -116,6 +120,8 @@ class TaskService:
         sort_by: str = "created_at",
         order: str = "desc"
     ):
+
+        """ List all tasks by filters """
 
         logger.info(
             f"""
@@ -157,6 +163,8 @@ class TaskService:
         task_id: int,
         assigned_to: int
     ):
+
+        """ Assign a pending task to a user """
 
         logger.info(
             f"Assigning task_id={task_id} to user_id={assigned_to}"
@@ -226,6 +234,8 @@ class TaskService:
         task_id: int
     ):
 
+        """ Delete task """
+
         logger.info(
             f"Deleting task_id={task_id}"
         )
@@ -265,6 +275,7 @@ class TaskService:
         task_id: int,
         payload
     ):
+        """ Update task by id """
 
         logger.info(
             f"Updating task_id={task_id}"
@@ -331,6 +342,8 @@ class TaskService:
         payload
     ):
 
+        """ Bulk create tasks """
+
         results = []
         success_count = 0
         failure_count = 0
@@ -381,6 +394,8 @@ class TaskService:
         db: Session,
         payload
     ):
+        """ Bulk update task status """
+        
 
         results = []
         success_count = 0

@@ -12,6 +12,8 @@ class UserRepository:
         user_data: dict
     ):
 
+        """ Create user """
+
         user = User(**user_data)
 
         db.add(user)
@@ -29,6 +31,8 @@ class UserRepository:
         user_id: int
     ):
 
+        """ Fetch user by id """
+
         return db.query(User).filter(
             User.id == user_id
         ).first()
@@ -40,6 +44,8 @@ class UserRepository:
         email: str
     ):
 
+        """ Fetch user by email """
+
         return db.query(User).filter(
             User.email == email
         ).first()
@@ -50,6 +56,8 @@ class UserRepository:
         db: Session
     ):
 
+        """ List all users """
+
         return db.query(User).all()
 
 
@@ -58,6 +66,8 @@ class UserRepository:
         db: Session,
         user
     ):
+
+        """ Delete user """
 
         db.delete(user)
 

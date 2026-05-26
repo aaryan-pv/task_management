@@ -21,6 +21,8 @@ class UserService:
         payload
     ):
 
+        """ Create user """
+
         logger.info(
             f"Creating user email={payload.email}"
         )
@@ -50,6 +52,8 @@ class UserService:
         user_id: int
     ):
 
+        """ Fetch user by id """
+
         logger.info(
             f"Fetching user_id={user_id}"
         )
@@ -73,6 +77,8 @@ class UserService:
         db: Session
     ):
 
+        """ List all users """
+
         logger.info(
             "Listing users"
         )
@@ -85,6 +91,8 @@ class UserService:
         db: Session,
         user_id: int
     ):
+
+        """ Delete user by id """
 
         logger.info(
             f"Deleting user_id={user_id}"

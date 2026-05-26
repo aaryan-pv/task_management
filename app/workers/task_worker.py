@@ -99,3 +99,6 @@ def process_task_completion(
     finally:
 
         db.close()
+
+
+        

@@ -1,254 +1,252 @@
-# Task Management API
-Built using:
+# Task CRUD API — Production-Oriented Backend System
 
-- FastAPI
-- PostgreSQL
-- SQLAlchemy
-- Redis
- 
+A  backend system built using modern production-grade backend patterns and architecture principles.
 
-# Features Implemented
+This project demonstrates:
 
-## Core Features
-
-- User CRUD APIs
-- Task CRUD APIs
-- Task Assignment
-- Query Filtering
-- Pagination
-- Task Status State Machine
-- Redis Caching
-- Cache Invalidation
-- Structured Logging
+- Layered Architecture
 - PostgreSQL Integration
-
+- Redis Caching
+- Celery Background Workers
+- State Machine Validation
+- Optimistic Locking
+- Concurrency Handling
+- Bulk Operations
+- Repository Pattern
+- Service Layer Pattern
+- Production-style Logging & Validation
  
+---
+
+# Project Overview
+
+This backend manages:
+
+- users
+- tasks
+- task assignments
+- task state transitions
+- background processing
+- caching
+- bulk task workflows
+
+The architecture is designed to simulate how production backend systems are structured in real-world applications.
+
+---
+
+# Core Technologies
+
+| Technology | Purpose |
+|---|---|
+| FastAPI | API framework |
+| PostgreSQL | Primary database |
+| SQLAlchemy | ORM layer |
+| Redis | Cache + Celery broker |
+| Celery | Background workers |
+| Pydantic | Validation layer |
+| Uvicorn | ASGI server |
+
+---
+
+# High-Level Architecture
+
+```mermaid
+flowchart TB
+
+    Client[Frontend / API Client]
+
+    Client --> Routes
+
+    subgraph FastAPI
+        Routes[Routes Layer]
+        Schemas[Pydantic Schemas]
+        Services[Service Layer]
+        Repositories[Repository Layer]
+    end
+
+    Routes --> Schemas
+    Schemas --> Services
+    Services --> Repositories
+
+    Repositories --> PostgreSQL[(PostgreSQL)]
+
+    Services --> Redis[(Redis Cache)]
+
+    Services --> CeleryBroker[(Redis Broker)]
+
+    CeleryBroker --> CeleryWorker[Celery Worker]
+
+    CeleryWorker --> PostgreSQL
+```
+
+---
+
+# API Request Lifecycle
+
+Every API request follows this structured flow:
+
+```mermaid
+sequenceDiagram
+
+    participant Client
+    participant Route
+    participant Schema
+    participant Service
+    participant Repository
+    participant PostgreSQL
+    participant Redis
+    participant Celery
+
+    Client->>Route: HTTP Request
+
+    Route->>Schema: Validate Request Body
+
+    Schema-->>Route: Validated Payload
+
+    Route->>Service: Call Business Logic
+
+    Service->>Redis: Check Cache
+
+    alt Cache Hit
+        Redis-->>Service: Cached Data
+    else Cache Miss
+        Service->>Repository: Fetch DB Data
+        Repository->>PostgreSQL: SQL Query
+        PostgreSQL-->>Repository: Result
+        Repository-->>Service: DB Response
+        Service->>Redis: Save Cache
+    end
+
+    Service->>Celery: Queue Background Task
+
+    Service-->>Route: Final Response
+
+    Route-->>Client: HTTP Response
+```
+
+---
 
 # Project Architecture
 
-This project follows:
+---
+
+# 1. Routes Layer
+
+### Responsibility
+
+Handles:
+- HTTP endpoints
+- dependency injection
+- request parsing
+- response serialization
+
+### Example
+
+```python
+@router.put("/{task_id}")
+```
+
+Routes should remain thin.
+
+No business logic should exist here.
+
+---
+
+# 2. Schema Layer
+
+### Responsibility
+
+Validates:
+- request body
+- response models
+- enums
+- optional fields
+- type safety
+
+### Technology
+
+- Pydantic v2
+
+### Benefits
+
+- prevents invalid requests
+- automatic validation
+- automatic OpenAPI docs
+
+---
+
+# 3. Service Layer
+
+### Responsibility
+
+Contains all business logic.
+
+This layer handles:
+
+- task assignment rules
+- status transition validation
+- optimistic locking
+- concurrency handling
+- cache invalidation
+- celery triggers
+- validation orchestration
+
+This is the most important layer in the application.
+
+---
+
+# 4. Repository Layer
+
+### Responsibility
+
+Handles:
+- SQLAlchemy queries
+- database interaction
+- transaction-level DB operations
+
+No business logic exists here.
+
+Repositories only talk to the database.
+
+---
+
+# 5. PostgreSQL Layer
+
+### Responsibility
+
+Primary source of truth.
+
+Stores:
+- users
+- tasks
+- assignments
+- timestamps
+- task states
+- processing flags
+
+---
+
+# 6. Redis Layer
+
+Redis is used for:
+
+---
+
+## A. Caching
+
+Caches:
+- individual tasks
+- user task lists
+
+### Cache Keys
 
 ```text
-Route Layer
-    ↓
-Service Layer
-    ↓
-Repository Layer
-    ↓
-Database / Cache
+task:{task_id}
+
+tasks:user:{user_id}
 ```
 
----
-
-# API Request Flow
-
-```mermaid
-flowchart TD
-
-Client["Client / Swagger / Postman"]
-
-Routes["FastAPI Routes"]
-Services["Service Layer"]
-Cache["Redis Cache"]
-Repo["Repository Layer"]
-DB["PostgreSQL"]
-
-Client --> Routes
-Routes --> Services
-
-Services --> Cache
-
-Cache -->|Cache Hit| Services
-
-Cache -->|Cache Miss| Repo
-
-Repo --> DB
-
-DB --> Repo
-
-Repo --> Services
-
-Services --> Cache
-
-Services --> Routes
-
-Routes --> Client
-```
-
----
-
-# Layer Responsibilities
-
-| Layer | Responsibility |
-|---|---|
-| Routes | Handles API requests/responses |
-| Service Layer | Business logic |
-| Repository Layer | Database queries |
-| Database | Persistent storage |
-| Redis | Fast cache storage |
-
-
-# Local Setup Guide
-
-# 1. Clone Repository
-
-```bash
-git clone <repo-url>
-
-cd task-management-api
-```
-
----
-
-# 2. Create Virtual Environment
-
-```bash
-python -m venv venv
-```
-
-Activate:
-
-## Windows
-
-```bash
-venv\Scripts\activate
-```
-
-
-# 3. Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-# 4. PostgreSQL Setup
-
-## Create Database
-
-Open pgAdmin or psql:
-
-```sql
-CREATE DATABASE task_db;
-```
-
----
-
-# 5. Redis Setup
-
-Run latest Redis container:
-
-```bash
-docker run -d \
-  --name redis-container \
-  -p 6379:6379 \
-  redis:7
-```
-
-Verify:
-
-```bash
-docker ps
-```
-
----
-
-# 6. Environment Variables
-
-We are pushing `.env` file in repository for easier reviewer setup.
-
-Reviewer can directly run project without creating environment variables manually.
-
-Example `.env`
- 
-# 7. Run FastAPI Server
-
-```bash
-uvicorn app.main:app --reload
-```
-
----
-
-# 8. Open Swagger Docs
-
-```text
-http://127.0.0.1:8000/docs
-```
-
----
-
-# Database Design
-
-# Users Table
-
-| Column | Type |
-|---|---|
-| id | Integer |
-| username | String |
-| email | String |
-| is_active | Boolean |
-| created_at | Timestamp |
-
----
-
-# Tasks Table
-
-| Column | Type |
-|---|---|
-| id | Integer |
-| title | String |
-| description | String |
-| status | Enum |
-| created_by | Foreign Key |
-| assigned_to | Foreign Key |
-| created_at | Timestamp |
-| updated_at | Timestamp |
-
----
-
-# Task Status State Machine
-
-```mermaid
-stateDiagram-v2
-
-[*] --> PENDING
-
-PENDING --> IN_PROGRESS
-PENDING --> CANCELLED
-
-IN_PROGRESS --> COMPLETED
-IN_PROGRESS --> CANCELLED
-
-COMPLETED --> [*]
-CANCELLED --> [*]
-```
-
----
-
-# Allowed Task Transitions
-
-| Current Status | Allowed Next Status |
-|---|---|
-| PENDING | IN_PROGRESS, CANCELLED |
-| IN_PROGRESS | COMPLETED, CANCELLED |
-| COMPLETED | None |
-| CANCELLED | None |
-
----
-
-# Redis Caching
-
-Caching implemented for:
-
-| API | Cache Key |
-|---|---|
-| Get Task By ID | `task:{task_id}` |
-| Get Tasks By User | `tasks:user:{user_id}` |
-
----
-
-# Cache TTL
+### TTL
 
 ```text
 300 seconds
@@ -256,178 +254,380 @@ Caching implemented for:
 
 ---
 
-# Cache Flow
+## B. Celery Broker
+
+Redis also acts as the message queue for Celery.
+
+Background tasks are stored temporarily in Redis until workers consume them.
+
+---
+
+# 7. Celery Worker Layer
+
+### Responsibility
+
+Handles:
+- background processing
+- retries
+- idempotent execution
+- async workflows
+
+---
+
+# Celery Task Flow
 
 ```mermaid
 flowchart LR
 
-Request --> Redis
+    API --> QueueTask
 
-Redis -->|Hit| ReturnResponse
+    QueueTask --> RedisBroker
 
-Redis -->|Miss| PostgreSQL
+    RedisBroker --> CeleryWorker
 
-PostgreSQL --> Redis
+    CeleryWorker --> ExecuteBackgroundTask
 
-Redis --> ReturnResponse
+    ExecuteBackgroundTask --> PostgreSQL
 ```
 
 ---
 
-# Cache Features
+# Current Celery Worker
 
-- Cache Hit Logging
-- Cache Miss Logging
-- Automatic Cache Invalidation
-- Graceful DB Fallback if Redis Fails
+```python
+process_task_completion()
+```
+
+Triggered when:
+
+```text
+task status -> completed
+```
 
 ---
 
-# API Endpoints
+# Redis Cache Flow
+
+```mermaid
+flowchart LR
+
+    Request --> RedisCheck
+
+    RedisCheck -->|Hit| ReturnCache
+
+    RedisCheck -->|Miss| FetchFromDB
+
+    FetchFromDB --> SaveCache
+
+    SaveCache --> ReturnResponse
+```
+
+---
+
+# Features Implemented
+
+---
+
+# 1. Layered Architecture
+
+Implemented proper separation between:
+- routes
+- services
+- repositories
+- schemas
+- workers
+
+---
+
+# 2. Redis Caching
+
+Implemented:
+- cache hit/miss flow
+- TTL-based caching
+- cache invalidation
+- graceful DB fallback
+
+---
+
+# 3. Celery Background Processing
+
+Implemented:
+- async background tasks
+- queue-based processing
+- retries
+- exponential backoff
+- idempotency handling
+
+---
+
+# 4. State Machine Validation
+
+Task status transitions are controlled.
+
+---
+
+## Allowed Transitions
+
+| Current State | Allowed Next States |
+|---|---|
+| pending | in_progress, cancelled |
+| in_progress | completed, cancelled |
+| completed | none |
+| cancelled | none |
+
+---
+
+# 5. Optimistic Locking & Concurrency Handling
+
+Implemented:
+- row-level locking
+- concurrency-safe assignment
+- double-update prevention
+
+Used for:
+- task assignment
+- task updates
+- status changes
+
+---
+
+# 6. Task Assignment Rules
+
+Implemented validations:
+
+- only pending tasks assignable
+- assigned user must exist
+- assigned user must be active
+
+---
+
+# 7. Bulk Operations
+
+Implemented:
+- bulk task creation
+- bulk status updates
+- partial failure handling
+- per-item validation
+
+---
+
+# 8. Query APIs
+
+Implemented:
+- filtering
+- sorting
+- pagination
+
+Examples:
+
+```http
+GET /tasks?status=pending
+```
+
+```http
+GET /tasks?page=1&limit=10
+```
+
+```http
+GET /tasks?sort_by=created_at
+```
+
+---
+
+# 9. Structured Logging
+
+Implemented logs for:
+- cache hit/miss
+- celery execution
+- retries
+- assignment
+- concurrency conflicts
+- task updates
+
+---
+
+# API Routes
+
+---
 
 # User APIs
 
----
-
-## Create User
-
-### Endpoint
-
-```http
-POST /users
-```
-
-### Request Body
-
-```json
-{
-  "username": "john",
-  "email": "john@example.com"
-}
-```
-
----
-
-## Get User By ID
-
-### Endpoint
-
-```http
-GET /users/{user_id}
-```
-
----
-
-## List Users
-
-### Endpoint
-
-```http
-GET /users
-```
+| Method | Endpoint | Purpose |
+|---|---|---|
+| POST | `/users/` | Create user |
+| GET | `/users/{id}` | Get single user |
+| GET | `/users/` | List users |
+| PUT | `/users/{id}` | Update user |
+| DELETE | `/users/{id}` | Delete user |
 
 ---
 
 # Task APIs
 
+| Method | Endpoint | Purpose |
+|---|---|---|
+| POST | `/tasks/` | Create task |
+| GET | `/tasks/{id}` | Get task |
+| GET | `/tasks/user/{user_id}` | Tasks by user |
+| GET | `/tasks/` | Query tasks |
+| PUT | `/tasks/{id}` | Update task |
+| DELETE | `/tasks/{id}` | Delete task |
+
 ---
 
-## Create Task
+# Bulk APIs
 
-### Endpoint
+| Method | Endpoint | Purpose |
+|---|---|---|
+| POST | `/tasks/bulk` | Bulk create tasks |
+| PUT | `/tasks/bulk/status` | Bulk status update |
 
-```http
-POST /tasks
-```
+---
 
-### Request Body
+# Example Request Payload
 
 ```json
 {
   "title": "Learn FastAPI",
-  "description": "Study FastAPI deeply",
-  "created_by": 1
-}
-```
-
----
-
-## Get Task By ID
-
-### Endpoint
-
-```http
-GET /tasks/{task_id}
-```
-
-### Features
-
-- Redis Cached
-- DB Fallback
-
----
-
-## Get Tasks By User
-
-### Endpoint
-
-```http
-GET /tasks/user/{user_id}
-```
-
-### Features
-
-- Redis Cached
-- DB Fallback
-
----
-
-## Update Task
-
-### Endpoint
-
-```http
-PUT /tasks/{task_id}
-```
-
-### Request Body
-
-```json
-{
-  "title": "Updated Task",
-  "status": "IN_PROGRESS"
-}
-```
-
----
-
-## Assign Task
-
-### Endpoint
-
-```http
-PUT /tasks/{task_id}/assign
-```
-
-### Request Body
-
-```json
-{
+  "description": "Read FastAPI docs",
+  "status": "pending",
+  "created_by": 1,
   "assigned_to": 2
 }
 ```
 
+---
 
-## Delete Task
+# Project Structure
 
-### Endpoint
-
-```http
-DELETE /tasks/{task_id}
+```text
+app/
+│
+├── api/
+│   └── routes/
+│
+├── core/
+│   ├── config.py
+│   ├── database.py
+│   ├── redis.py
+│   └── celery_worker.py
+│
+├── models/
+│
+├── repositories/
+│
+├── schemas/
+│
+├── services/
+│
+├── workers/
+│
+├── utils/
+│
+└── main.py
 ```
+
+---
+
+# Design Patterns Used
+
+| Pattern | Purpose |
+|---|---|
+| Repository Pattern | DB abstraction |
+| Service Layer Pattern | Business logic separation |
+| Dependency Injection | FastAPI dependency system |
+| State Machine Pattern | Controlled transitions |
+| Cache-Aside Pattern | Redis caching |
+| Queue-Based Async Processing | Celery workers |
+
+---
+
+# Production Engineering Concepts Implemented
+
+- Layered Architecture
+- Repository Pattern
+- Service Layer
+- Redis Cache-Aside Pattern
+- Celery Queue Workers
+- Async Processing
+- Optimistic Locking
+- Concurrency Control
+- State Machine Validation
+- Bulk Processing
+- Graceful Fallbacks
+- Structured Logging
+- Idempotent Workers
+
+---
+
+# Documentation References
+
+| File | Purpose |
+|---|---|
+| `docs/API_ROUTES.md` | Detailed API route explanation |
+| `docs/SYSTEM_ARCHITECTURE.md` | Internal backend architecture |
+| `docs/DB_INTERACTION.md` | PostgreSQL, Redis & Celery interaction |
+| `docs/CELERY_FLOW.md` | Celery worker flow |
+| `docs/CACHE_FLOW.md` | Redis caching flow |
+| `docs/LOCAL_SETUP.md` | Complete local setup guide |
+
+
+
+# Testing
+
+Complete integration testing suite implemented.
+
+Covered:
+
+- Redis caching
+- Celery workers
+- Concurrency
+- Status transitions
+- Query APIs
+- Bulk APIs
+- Assignment logic
+
+---
+
+# Test Architecture
+
+```mermaid
+flowchart LR
+
+    A[Pytest]
+    B[Test Client]
+    C[FastAPI]
+    D[(Test DB)]
+    E[(Mock Redis)]
+    F[(Mock Celery)]
+
+    A --> B
+    B --> C
+
+    C --> D
+    C --> E
+    C --> F
+```
+
+---
+
+# Test Reports
+
+Generate HTML reports:
+
+```bash
+pytest --html=report.html --self-contained-html
+```
+
+Store logs:
+
+```bash
+pytest -v > test_results.txt
+```
+
+---
  
 
+# Goal of This Project
 
- Date:25/05/2026
- Work Item: https://app.plane.so/predusk/browse/DIGILEKH-33/
- Github Link: https://github.com/aaryan-pv/task_management
+This project is designed to demonstrate how modern backend systems are engineered using scalable backend architecture patterns and production-grade concepts instead of simple CRUD-only implementations.

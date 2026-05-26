@@ -13,6 +13,7 @@ from app.utils.logger import logger
 from app.schemas.task_schema import (
     TaskCreate,
     TaskUpdate,
+    TaskAssign,
     TaskResponse,
     BulkTaskCreate,
     BulkTaskStatusUpdate,
@@ -120,6 +121,24 @@ def delete_task(
     return TaskService.delete_task(
         db,
         task_id
+    )
+
+
+# ASSIGN TASK
+@router.put(
+    "/{task_id}/assign",
+    response_model=TaskResponse
+)
+def assign_task(
+    task_id: int,
+    payload: TaskAssign,
+    db: Session = Depends(get_db)
+):
+
+    return TaskService.assign_task(
+        db,
+        task_id,
+        payload.assigned_to
     )
 
 

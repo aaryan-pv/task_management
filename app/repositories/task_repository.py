@@ -16,8 +16,9 @@ class TaskRepository:
     def create_task(
         db: Session,
         task_data: dict
-    ):
-
+    ): 
+        """ Create task """
+    
         task = Task(**task_data)
 
         db.add(task)
@@ -30,6 +31,7 @@ class TaskRepository:
         db: Session,
         task_id: int
     ):
+        """ Fetch task by id """
 
         return db.query(Task).filter(
             Task.id == task_id
@@ -47,6 +49,8 @@ class TaskRepository:
         sort_by: str = "created_at",
         order: str = "desc"
     ):
+
+        """ List all tasks by filters """
 
         query = db.query(Task)
 
@@ -102,6 +106,8 @@ class TaskRepository:
         update_data: dict
     ):
 
+        """ Update task """
+
         for key, value in update_data.items():
 
             setattr(task, key, value)
@@ -110,33 +116,38 @@ class TaskRepository:
 
 
     @staticmethod
-    def assign_pending_task(
-        db: Session,
-        task_id: int,
-        assigned_to: int
-    ) -> int:
-        """
-        Atomically assign only if status is pending and unassigned.
-        Returns the number of rows updated (0 or 1).
-        """
-        return (
-            db.query(Task)
-            .filter(
-                Task.id == task_id,
-                Task.status == TaskStatus.PENDING,
-                Task.assigned_to.is_(None),
-            )
-            .update(
-                {"assigned_to": assigned_to},
-                synchronize_session=False,
-            )
-        )
-
-
-    @staticmethod
     def delete_task(
         db: Session,
         task
     ):
 
+        """ Delete task """
+
         db.delete(task)
+
+    @staticmethod
+    def assign_task_atomic(
+        db: Session,
+        task_id: int,
+        user_id: int
+):
+
+        """ Assign a pending task to a user """
+
+        updated_rows = (
+        db.query(Task)
+        .filter(
+            Task.id == task_id,
+            Task.assigned_to.is_(None),
+            Task.status == TaskStatus.PENDING
+        )
+        .update(
+            {
+                "assigned_to": user_id,
+                "status": TaskStatus.IN_PROGRESS
+            },
+            synchronize_session=False
+        )
+    )
+
+        return updated_rows

@@ -27,6 +27,11 @@ class TaskUpdate(BaseModel):
     status: Optional[TaskStatus] = None
     assigned_to: Optional[int] = None
 
+
+class TaskAssign(BaseModel):
+
+    assigned_to: int
+
  
 
 class TaskResponse(BaseModel):
